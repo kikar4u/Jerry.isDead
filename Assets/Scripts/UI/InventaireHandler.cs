@@ -65,6 +65,7 @@ public class InventaireHandler : MonoBehaviour
                     GameObject playerActionGo = Instantiate(playerActionPrefab, transform.position, Quaternion.identity);
                     playerActionGo.transform.SetParent(currentActionContainer.transform);
                     playerActionGo.GetComponent<AlgoAction>().AlgoActions = playerAction.Key;
+                    playerActionGo.GetComponent<AlgoAction>().isDragAndDroppable = true;
                 }
                 algoActionsList.Add(playerAction.Key);
                 currentActionContainerIndex++;

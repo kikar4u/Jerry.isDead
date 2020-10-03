@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class AlgoAction : MonoBehaviour
+public class AlgoAction : DragAndDrop
 {
     public Image algoActionVisual;
 
@@ -51,5 +51,11 @@ public class AlgoAction : MonoBehaviour
                 algoActionVisual.sprite = algoActionImage_Shoot;
             break;
         }
+    }
+
+    public override void OnEndDragAction()
+    {
+        base.OnEndDragAction();
+        Debug.Log("On End Drag algo boxes");
     }
 }
