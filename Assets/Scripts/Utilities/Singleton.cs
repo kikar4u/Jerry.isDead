@@ -59,8 +59,6 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
                         {
                             parentestTransform = parentestTransform.parent;
                         }
-
-                        DontDestroyOnLoad(parentestTransform.gameObject);
                     }
                 }
 
@@ -82,4 +80,5 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
     {
         applicationIsQuitting = true;
     }
+
 }
