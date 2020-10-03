@@ -1,0 +1,187 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEditor;
+
+public class LevelEditor : EditorWindow
+{
+    [SerializeField] private GameObject prefabSetion;
+    private Color colorBGDefault;
+    private ScriptableLevel currentLevel;
+    private GUILayoutOption[] optionsButton = new GUILayoutOption[2] { GUILayout.Height(40), GUILayout.Width(70) };
+    private string levelName = "NvNivo";
+    private List<ScriptableLevel> levelsToDelet = new List<ScriptableLevel>();
+
+
+    [MenuItem("Window/Editeur de Nivo")]
+    public static void OpenLevelEditorWindow()
+    {
+        GetWindow<LevelEditor>("Editeur de Nivo");
+    }
+
+    private void OnFocus()
+    {
+        colorBGDefault = GUI.backgroundColor;
+    }
+
+    private void OnDestroy()
+    {
+        SaveAllLevels();
+    }
+
+    private void Update()
+    {
+        
+    }
+
+    private void OnGUI()
+    {
+        DrawLevelInterface();
+
+        GUILayout.Space(10);
+
+        if(currentLevel)
+        {
+            DrawSectionInterface();
+        }
+        
+    }
+
+    #region INTERFACE LEVEL
+    private void DrawLevelInterface()
+    {
+        GUILayout.Label("Liste des nivos");
+        GUILayout.Space(10);
+
+        DrawAddLevelInterface();
+
+        GUILayout.Space(10);
+
+        DrawLevelList();
+    }
+
+    private void DrawAddLevelInterface()
+    {
+        GUILayout.Label("Ajouter Nivo");
+
+        levelName = GUILayout.TextField(levelName);
+
+        if (GUILayout.Button(" + ", optionsButton))
+        {
+            LevelManager.Instance.AddLevel(levelName);
+            levelName = "NvNivo";
+        }
+    }
+
+    private void DrawLevelList()
+    {
+        foreach(ScriptableLevel level in LevelManager.Instance.listLevels)
+        {
+            DrawLevelUnit(level);
+        }
+
+        foreach(ScriptableLevel level in levelsToDelet)
+        {
+            LevelManager.Instance.DeletLevel(level);
+        }
+
+        levelsToDelet.Clear();
+    }
+
+    private void DrawLevelUnit(ScriptableLevel levelToDraw)
+    {
+        GUILayout.BeginHorizontal();
+
+        GUILayout.Label(levelToDraw.name);
+
+        if(GUILayout.Button("Charger", optionsButton))
+        {
+            if (currentLevel) SaveLevel(currentLevel);
+            LevelManager.Instance.UnfoldLevel(levelToDraw);
+            currentLevel = levelToDraw;
+        }
+        if (GUILayout.Button("Supprimer", optionsButton))
+        {
+            if(levelToDraw == currentLevel)
+            {
+                LevelManager.Instance.DeleteCurrentLevel();
+            }
+            levelsToDelet.Add(levelToDraw);
+        }
+
+        GUILayout.EndHorizontal();
+    }
+    #endregion
+
+    #region INTERFACE SECTION
+    private void DrawSectionInterface()
+    {
+        GUILayout.Label("Liste des sections de " + currentLevel.name);
+        GUILayout.Space(10);
+
+        DrawListSections();
+    }
+
+    private void DrawListSections()
+    {
+        if (GUILayout.Button("Ajouter Section "))
+        {
+            currentLevel.AddSection();
+            LevelManager.Instance.UnfoldLevel(currentLevel);
+        }
+
+        for (int i = 0; i < currentLevel.listSections.Count; i++)
+        {
+            DrawSectionUnit(currentLevel.listSections[i], i);
+        }
+    }
+
+    private void DrawSectionUnit(ScriptableSection sectionToDraw, int index)
+    {
+        GUILayoutOption[] optionsIndex = new GUILayoutOption[2] { GUILayout.Height(30), GUILayout.Width(20) };
+        GUILayout.BeginHorizontal();
+
+        GUILayout.Label("" + index, optionsIndex);
+
+        sectionToDraw.name = GUILayout.TextField(sectionToDraw.name);
+
+        if(GUILayout.Button("^"))
+        {
+            currentLevel.MoveDownSection(index);
+            LevelManager.Instance.UnfoldLevel(currentLevel);
+        }
+
+        if (GUILayout.Button("ˇ"))
+        {
+            currentLevel.MoveUpSection(index);
+            LevelManager.Instance.UnfoldLevel(currentLevel);
+        }
+
+        if (GUILayout.Button("Spprimer", optionsButton))
+        {
+            currentLevel.RemoveSection(index);
+            LevelManager.Instance.UnfoldLevel(currentLevel);
+        }
+
+        GUILayout.EndHorizontal();
+    }
+    #endregion
+
+
+    private void SaveLevel(ScriptableLevel levelToSave)
+    {
+        AssetDatabase.Refresh();
+        EditorUtility.SetDirty(levelToSave);
+        AssetDatabase.SaveAssets();
+    }
+
+    private void SaveAllLevels()
+    {
+        foreach (ScriptableLevel level in LevelManager.Instance.listLevels)
+        {
+            SaveLevel(level);
+        }
+    }
+
+    
+}
