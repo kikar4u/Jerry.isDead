@@ -17,16 +17,10 @@ public class InventaireHandler : MonoBehaviour
     public List<AlgoActionEnum> algoActionsList;
 
     private bool m_isInit;
-    void Open()
+    public void Open()
     {
         if(!m_isInit) Init();
         DisplayPlayerActions();
-
-    }
-
-    void Start()
-    {
-        Open();
     }
 
     void Init()
@@ -74,7 +68,7 @@ public class InventaireHandler : MonoBehaviour
         }
     }
 
-    void Close()
+    public void Close()
     {
 
     }
