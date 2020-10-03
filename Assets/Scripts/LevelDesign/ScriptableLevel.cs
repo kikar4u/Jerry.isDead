@@ -67,6 +67,7 @@ public class ScriptableLevel : ScriptableObject
         if (!Application.isPlaying)
             newObjLevel = (GameObject)PrefabUtility.InstantiatePrefab(prefabLevel);
 #endif
+        else
         newObjLevel = Instantiate(prefabLevel);
         newObjLevel.name = name;
 

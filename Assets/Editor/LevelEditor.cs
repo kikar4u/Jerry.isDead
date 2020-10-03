@@ -25,6 +25,7 @@ public class LevelEditor : EditorWindow
 
     private void OnDestroy()
     {
+
         SaveAllLevels();
     }
 
