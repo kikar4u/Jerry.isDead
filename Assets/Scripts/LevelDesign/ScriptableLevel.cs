@@ -62,22 +62,26 @@ public class ScriptableLevel : ScriptableObject
 
     public void UnfoldLevel()
     {
-
-        GameObject newObjLevel = Instantiate(prefabLevel);
+        GameObject newObjLevel;
+#if UNITY_EDITOR
+        if (!Application.isPlaying)
+            newObjLevel = (GameObject)PrefabUtility.InstantiatePrefab(prefabLevel);
+#endif
+        newObjLevel = Instantiate(prefabLevel);
         newObjLevel.name = name;
 
         Level newLevel;
 
         newObjLevel.TryGetComponent(out newLevel);
 
-        LevelManager.currentLevel = newLevel;
+        LevelManager.Instance.currentLevel = newLevel;
 
         foreach (ScriptableSection section in listSections)
         {
             GameObject newObjSection;
 #if UNITY_EDITOR
             if(!Application.isPlaying)
-            newObjSection = (GameObject)PrefabUtility.InstantiatePrefab(prefabSection, newLevel.transform);
+                newObjSection = (GameObject)PrefabUtility.InstantiatePrefab(prefabSection, newLevel.transform);
     #endif
             else
                 newObjSection = Instantiate(prefabSection, newLevel.transform);
@@ -86,7 +90,24 @@ public class ScriptableLevel : ScriptableObject
             newObjSection.TryGetComponent(out newSection);
             newSection.InitializeSection(section);
 
+            if (!Application.isPlaying)
+            {
+                if (section.obstacleLeft)
+                {
+                    PrefabUtility.InstantiatePrefab(section.obstacleLeft.gameObject, newSection.tronconLeft.transform);
+                }
+                if (section.obstacleCenter)
+                {
+                    PrefabUtility.InstantiatePrefab(section.obstacleCenter.gameObject, newSection.tronconCenter.transform);
+                }
+                if (section.obstacleRight)
+                {
+                    PrefabUtility.InstantiatePrefab(section.obstacleRight.gameObject, newSection.tronconRight.transform);
+                }
+            }
+
             newLevel.SpawnSectionFlat(newSection);
         }
     }
+    
 }

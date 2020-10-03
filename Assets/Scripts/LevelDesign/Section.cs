@@ -28,5 +28,22 @@ public class Section : MonoBehaviour
     public void InitializeSection(ScriptableSection scriptToInitFrom)
     {
         scriptSection = scriptToInitFrom;
+        name = scriptSection.name;
+    }
+
+    public void AssignObstacleToScriptSection(Obstacle obstacleToAssigne, Troncon troncon)
+    {
+        if(troncon == tronconLeft)
+        {
+            scriptSection.obstacleLeft = obstacleToAssigne;
+        }
+        else if (troncon == tronconCenter)
+        {
+            scriptSection.obstacleCenter = obstacleToAssigne;
+        }
+        else
+        {
+            scriptSection.obstacleRight = obstacleToAssigne;
+        }
     }
 }

@@ -5,13 +5,12 @@ using UnityEditor;
 
 public class LevelEditor : EditorWindow
 {
-    [SerializeField] private GameObject prefabSetion;
     private Color colorBGDefault;
     private ScriptableLevel currentLevel;
     private GUILayoutOption[] optionsButton = new GUILayoutOption[2] { GUILayout.Height(40), GUILayout.Width(70) };
     private string levelName = "NvNivo";
     private List<ScriptableLevel> levelsToDelet = new List<ScriptableLevel>();
-
+    Vector2 scrollListSectionPosition = new Vector2();
 
     [MenuItem("Window/Editeur de Nivo")]
     public static void OpenLevelEditorWindow()
@@ -36,14 +35,19 @@ public class LevelEditor : EditorWindow
 
     private void OnGUI()
     {
+
+
         DrawLevelInterface();
 
         GUILayout.Space(10);
+
+
 
         if(currentLevel)
         {
             DrawSectionInterface();
         }
+
         
     }
 
@@ -130,10 +134,14 @@ public class LevelEditor : EditorWindow
             LevelManager.Instance.UnfoldLevel(currentLevel);
         }
 
+        scrollListSectionPosition = GUILayout.BeginScrollView(scrollListSectionPosition, false, true);
+
         for (int i = 0; i < currentLevel.listSections.Count; i++)
         {
             DrawSectionUnit(currentLevel.listSections[i], i);
         }
+
+        GUILayout.EndScrollView();
     }
 
     private void DrawSectionUnit(ScriptableSection sectionToDraw, int index)
@@ -141,7 +149,11 @@ public class LevelEditor : EditorWindow
         GUILayoutOption[] optionsIndex = new GUILayoutOption[2] { GUILayout.Height(30), GUILayout.Width(20) };
         GUILayout.BeginHorizontal();
 
-        GUILayout.Label("" + index, optionsIndex);
+        if(GUILayout.Button("" + index, optionsIndex))
+        {
+            SceneView.lastActiveSceneView.LookAt(LevelManager.Instance.currentLevel.listSections[index].transform.position);
+            Selection.activeGameObject = LevelManager.Instance.currentLevel.listSections[index].gameObject;
+        }
 
         sectionToDraw.name = GUILayout.TextField(sectionToDraw.name);
 

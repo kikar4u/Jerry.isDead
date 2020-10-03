@@ -5,7 +5,7 @@ using UnityEngine;
 public class LevelManager : Singleton<LevelManager>
 {
     public List<ScriptableLevel> listLevels = new List<ScriptableLevel>();
-    public static Level currentLevel;
+    public Level currentLevel;
 
     // Start is called before the first frame update
     void Start()
@@ -64,4 +64,5 @@ public class LevelManager : Singleton<LevelManager>
                 DestroyImmediate(currentLevel.gameObject);
         }
     }
+    
 }

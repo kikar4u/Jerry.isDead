@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Troncon : MonoBehaviour
+public abstract class Obstacle : MonoBehaviour
 {
+
     // Start is called before the first frame update
     void Start()
     {
