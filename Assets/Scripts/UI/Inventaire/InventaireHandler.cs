@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class InventaireHandler : MonoBehaviour
 {
@@ -10,13 +11,17 @@ public class InventaireHandler : MonoBehaviour
 
     public GameObject actionContainerPrefab;
 
-    public GameObject body;
+    public GameObject bodyAction;
+
+    public GameObject bodyDirection;
 
     public GameObject playerActionPrefab;
 
     public List<AlgoActionEnum> algoActionsList;
-
     private bool m_isInit;
+
+    [HideInInspector]public List<Action> actionScriptableArray;    
+
     public void Open()
     {
         if(!m_isInit) Init();
@@ -35,36 +40,62 @@ public class InventaireHandler : MonoBehaviour
         playerActions.Add(AlgoActionEnum.Left,1);
         playerActions.Add(AlgoActionEnum.Activate,5);
         playerActions.Add(AlgoActionEnum.Shoot,2);
+
+        actionScriptableArray = Resources.LoadAll<Action>("Action").ToList();
     }
 
     private void DisplayPlayerActions()
     {
-        GameObject currentActionContainer = null;
-        int currentActionContainerIndex = 0;
-        int test = 0;
+        GameObject currentActionContainerBodyAction = null;
+        int currentActionContainerIndexAction = 0;
+
+        GameObject currentActionContainerBodyDirection = null;
+        int currentActionContainerIndexDirection = 0;
+
         foreach(KeyValuePair<AlgoActionEnum,int> playerAction in playerActions)
         {
-            for(int i = 0, n = playerAction.Value; i < n; i++)
-            {
-                if(currentActionContainerIndex%3 == 0 || currentActionContainer == null)
-                {
-                    currentActionContainer = Instantiate(actionContainerPrefab, transform.position, Quaternion.identity);
-                    currentActionContainer.transform.SetParent(body.transform);
-                    currentActionContainer.name += i;
-                    currentActionContainerIndex = currentActionContainerIndex;
-                }
+            Action targetAction = actionScriptableArray.Find(x => x.actionName == playerAction.Key);
 
-                if(currentActionContainer != null)
+            if(targetAction != null)
+            {
+                if(targetAction.actionType == Action.ActionType.Direction)
                 {
-                    GameObject playerActionGo = Instantiate(playerActionPrefab, transform.position, Quaternion.identity);
-                    playerActionGo.transform.SetParent(currentActionContainer.transform);
-                    playerActionGo.GetComponent<AlgoAction>().AlgoActions = playerAction.Key;
-                    playerActionGo.GetComponent<AlgoAction>().isDragAndDroppable = true;
+                    if(currentActionContainerIndexDirection%2 == 0 || currentActionContainerBodyDirection == null)
+                    {
+                        currentActionContainerBodyDirection = Instantiate(actionContainerPrefab, transform.position, Quaternion.identity);
+                        currentActionContainerBodyDirection.transform.SetParent(bodyDirection.transform);
+                        currentActionContainerBodyDirection.name += currentActionContainerIndexDirection;
+                    }
+
+                    if(currentActionContainerBodyDirection != null)
+                    {
+                        GameObject playerActionGo = Instantiate(playerActionPrefab, transform.position, Quaternion.identity);
+                        playerActionGo.transform.SetParent(currentActionContainerBodyDirection.transform);
+                        playerActionGo.GetComponent<AlgoActionSpawner>().SetupAlgoAction(targetAction, playerAction.Value);
+                    }
+                    currentActionContainerIndexDirection++;               
                 }
+                else if (targetAction.actionType == Action.ActionType.Action)
+                {
+                    if(currentActionContainerIndexAction%2 == 0 || currentActionContainerBodyAction == null)
+                    {
+                        currentActionContainerBodyAction = Instantiate(actionContainerPrefab, transform.position, Quaternion.identity);
+                        currentActionContainerBodyAction.transform.SetParent(bodyAction.transform);
+                        currentActionContainerBodyAction.name += currentActionContainerIndexAction;
+                    }
+                        
+                    if(currentActionContainerBodyAction != null)
+                    {
+                        GameObject playerActionGo = Instantiate(playerActionPrefab, transform.position, Quaternion.identity);
+                        playerActionGo.transform.SetParent(currentActionContainerBodyAction.transform);
+                        playerActionGo.GetComponent<AlgoActionSpawner>().SetupAlgoAction(targetAction, playerAction.Value);
+                    }
+
+                    currentActionContainerIndexAction++;
+                 }
+
                 algoActionsList.Add(playerAction.Key);
-                currentActionContainerIndex++;
             }
-            test ++;
         }
     }
 

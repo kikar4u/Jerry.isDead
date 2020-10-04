@@ -612,6 +612,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 050d1efff30d0bf4cbc8cb025358e5ef, type: 3}
+--- !u!1 &3040524514168063827 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2980412230752239925, guid: 050d1efff30d0bf4cbc8cb025358e5ef,
+    type: 3}
+  m_PrefabInstance: {fileID: 3040524514168063826}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5066026103374231817
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -624,6 +630,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Managers
       objectReference: {fileID: 0}
+    - target: {fileID: 5092560490011188669, guid: 55c5cb88742793d48bf15637f58d8352,
+        type: 3}
+      propertyPath: inventaire
+      value: 
+      objectReference: {fileID: 3040524514168063827}
     - target: {fileID: 9206580070004634127, guid: 55c5cb88742793d48bf15637f58d8352,
         type: 3}
       propertyPath: m_LocalPosition.x

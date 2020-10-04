@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc0045587aa3b25448b0e91d8347b026, type: 3}
+  m_Name: Shoot
+  m_EditorClassIdentifier: 
+  actionName: 3
+  actionType: 1
+  actionActivated: {fileID: 21300000, guid: e447575d9996cd04f9791c44d76c4a0c, type: 3}
+  actionDeactivated: {fileID: 21300000, guid: 56a6f17d6b6f1294aac264821b074e2f, type: 3}
+  actionEmpty: {fileID: 21300000, guid: 3b75037b8caa380429f91d689da193c6, type: 3}
