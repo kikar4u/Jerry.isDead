@@ -14,6 +14,7 @@ public class GameManager : Singleton<GameManager>
 
     void Init()
     {
+        SpaceWheel.Instance.Init();
         UIManager.Instance.Init();
     }
 

@@ -45,7 +45,6 @@ public class SpaceWheel : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        LaunchLevel();
         
     }
 
@@ -53,6 +52,11 @@ public class SpaceWheel : MonoBehaviour
     void Update()
     {
         //pivot.eulerAngles = customPivotRotation;
+    }
+
+    public void Init()
+    {
+        LaunchLevel();
     }
 
     private void LaunchLevel()
