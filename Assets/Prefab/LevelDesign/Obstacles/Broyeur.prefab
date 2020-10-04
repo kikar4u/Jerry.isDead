@@ -379,6 +379,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a78f075ac788444fa2315052c9a8408, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scriptObstacle: {fileID: 11400000, guid: f48c289922135274990e321c0f128575, type: 2}
 --- !u!1 &7361131956960621633
 GameObject:
   m_ObjectHideFlags: 0

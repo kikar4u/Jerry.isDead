@@ -3,7 +3,9 @@ guid: 8936532d3bafe66458df40fc87fa934f
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - scriptObstacle: {fileID: 11400000, guid: 1cf78ca1ae19d884d8407a2a103fc1a6, type: 2}
+  - teteTourelle: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

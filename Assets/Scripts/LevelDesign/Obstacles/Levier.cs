@@ -5,13 +5,8 @@ using UnityEngine.Events;
 
 public class Levier : Obstacle
 {
-    private UnityEvent eventLeverActivated = new UnityEvent();
+    [HideInInspector] public UnityEvent eventLeverActivated = new UnityEvent();
     public Porte porte;
-
-    private void Awake()
-    {
-        if(porte) eventLeverActivated.AddListener(porte.OpenDoor);
-    }
 
     // Start is called before the first frame update
     void Start()
@@ -28,5 +23,14 @@ public class Levier : Obstacle
     public void ActivateLever()
     {
         eventLeverActivated.Invoke();
+    }
+
+    public override void LoadScriptobstacle()
+    {
+        base.LoadScriptobstacle();
+
+        ScriptableLevier scriptLevier = (ScriptableLevier)scriptObstacle;
+
+        scriptLevier.levier = this;
     }
 }

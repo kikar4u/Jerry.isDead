@@ -31,7 +31,39 @@ public class Section : MonoBehaviour
         name = scriptSection.name;
     }
 
-    public void AssignObstacleToScriptSection(Obstacle obstacleToAssigne, Troncon troncon)
+    public void LoadObstacles()
+    {
+        Obstacle currentObstacle;
+
+        //Obstacle gauche
+        if(scriptSection.obstacleLeft)
+        {
+            Instantiate(ObstacleManager.Instance.GetObstacleFromScript(scriptSection.obstacleLeft), tronconLeft.transform).TryGetComponent(out currentObstacle);
+            currentObstacle.scriptObstacle = scriptSection.obstacleLeft;
+            currentObstacle.LoadScriptobstacle();
+            tronconLeft.obstacle = currentObstacle;
+        }
+
+        //Obstacle centre
+        if(scriptSection.obstacleCenter)
+        {
+            Instantiate(ObstacleManager.Instance.GetObstacleFromScript(scriptSection.obstacleCenter), tronconCenter.transform).TryGetComponent(out currentObstacle);
+            currentObstacle.scriptObstacle = scriptSection.obstacleCenter;
+            currentObstacle.LoadScriptobstacle();
+            tronconCenter.obstacle = currentObstacle;
+        }
+
+        //Obstacle droit
+        if (scriptSection.obstacleRight)
+        {
+            Instantiate(ObstacleManager.Instance.GetObstacleFromScript(scriptSection.obstacleRight), tronconRight.transform).TryGetComponent(out currentObstacle);
+            currentObstacle.scriptObstacle = scriptSection.obstacleRight;
+            currentObstacle.LoadScriptobstacle();
+            tronconRight.obstacle = currentObstacle;
+        }
+    }
+
+    public void AssignObstacleToScriptSection(ScriptableObstacle obstacleToAssigne, Troncon troncon)
     {
         if(troncon == tronconLeft)
         {

@@ -10,6 +10,7 @@ public class ScriptableLevel : ScriptableObject
     [SerializeField] private GameObject prefabSection;
     [SerializeField] private GameObject prefabLevel;
     public List<ScriptableSection> listSections = new List<ScriptableSection>();
+    public float sequenceDuration = 1;
 
     public void AddSection()
     {
@@ -95,18 +96,30 @@ public class ScriptableLevel : ScriptableObject
             {
                 if (section.obstacleLeft)
                 {
-                    GameObject newObjObstacle = (GameObject)PrefabUtility.InstantiatePrefab(section.obstacleLeft.gameObject, newSection.tronconLeft.transform);
+                    GameObject newObjObstacle = (GameObject)PrefabUtility.InstantiatePrefab(
+                        ObstacleManager.Instance.GetObstacleFromScript(section.obstacleLeft).gameObject, newSection.tronconLeft.transform);
                     newObjObstacle.TryGetComponent(out newSection.tronconLeft.obstacle);
+
+                    newSection.tronconLeft.obstacle.scriptObstacle = section.obstacleLeft.Copy();
+                    newSection.tronconLeft.obstacle.LoadScriptobstacle();
                 }
                 if (section.obstacleCenter)
                 {
-                    GameObject newObjObstacle = (GameObject)PrefabUtility.InstantiatePrefab(section.obstacleCenter.gameObject, newSection.tronconCenter.transform);
+                    GameObject newObjObstacle = (GameObject)PrefabUtility.InstantiatePrefab(
+                        ObstacleManager.Instance.GetObstacleFromScript(section.obstacleCenter).gameObject, newSection.tronconCenter.transform);
                     newObjObstacle.TryGetComponent(out newSection.tronconCenter.obstacle);
+
+                    newSection.tronconCenter.obstacle.scriptObstacle = section.obstacleCenter.Copy();
+                    newSection.tronconCenter.obstacle.LoadScriptobstacle();
                 }
                 if (section.obstacleRight)
                 {
-                    GameObject newObjObstacle = (GameObject)PrefabUtility.InstantiatePrefab(section.obstacleRight.gameObject, newSection.tronconRight.transform);
+                    GameObject newObjObstacle = (GameObject)PrefabUtility.InstantiatePrefab(
+                        ObstacleManager.Instance.GetObstacleFromScript(section.obstacleRight).gameObject, newSection.tronconRight.transform);
                     newObjObstacle.TryGetComponent(out newSection.tronconRight.obstacle);
+
+                    newSection.tronconRight.obstacle.scriptObstacle = section.obstacleRight.Copy();
+                    newSection.tronconRight.obstacle.LoadScriptobstacle();
                 }
             }
 

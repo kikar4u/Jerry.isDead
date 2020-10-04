@@ -18,5 +18,17 @@ public class TourelleAuto : Obstacle
         
     }
 
+    public override void LoadScriptobstacle()
+    {
+        base.LoadScriptobstacle();
 
+        ScriptableTourelleAuto scriptTourelle = (ScriptableTourelleAuto)scriptObstacle;
+
+        RotateHead(scriptTourelle.directionTourelle);
+    }
+
+    public void RotateHead(Vector3 direction)
+    {
+        teteTourelle.transform.LookAt(direction + teteTourelle.transform.position);
+    }
 }

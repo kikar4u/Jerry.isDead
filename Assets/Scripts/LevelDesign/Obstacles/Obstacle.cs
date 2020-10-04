@@ -4,6 +4,7 @@ using UnityEngine;
 
 public abstract class Obstacle : MonoBehaviour
 {
+    public ScriptableObstacle scriptObstacle;
 
     // Start is called before the first frame update
     void Start()
@@ -15,5 +16,10 @@ public abstract class Obstacle : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public virtual void LoadScriptobstacle()
+    {
+
     }
 }

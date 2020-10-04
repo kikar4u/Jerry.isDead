@@ -363,3 +363,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a2804f5a39aa16439141fed5edc1e7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scriptObstacle: {fileID: 11400000, guid: e9c9b5ec332750a4199395c33671ffc2, type: 2}
+  eventLeverActivated:
+    m_PersistentCalls:
+      m_Calls: []
+  porte: {fileID: 0}

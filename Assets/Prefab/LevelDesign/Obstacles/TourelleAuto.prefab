@@ -206,6 +206,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8936532d3bafe66458df40fc87fa934f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scriptObstacle: {fileID: 11400000, guid: 1cf78ca1ae19d884d8407a2a103fc1a6, type: 2}
   teteTourelle: {fileID: 1024702830828157802}
 --- !u!1 &3894829535156178395
 GameObject:

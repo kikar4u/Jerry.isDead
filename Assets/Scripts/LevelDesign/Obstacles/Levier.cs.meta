@@ -3,7 +3,9 @@ guid: 5a2804f5a39aa16439141fed5edc1e7a
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - scriptObstacle: {fileID: 11400000, guid: e9c9b5ec332750a4199395c33671ffc2, type: 2}
+  - porte: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

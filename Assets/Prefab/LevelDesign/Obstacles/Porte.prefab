@@ -47,6 +47,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34666266316003947a9284abbdd30742, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scriptObstacle: {fileID: 11400000, guid: a917bc7dfee48414481f5c1a54a401be, type: 2}
+  levier: {fileID: 0}
 --- !u!1 &5942758160028635837
 GameObject:
   m_ObjectHideFlags: 0

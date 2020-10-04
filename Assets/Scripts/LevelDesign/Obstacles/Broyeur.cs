@@ -15,4 +15,9 @@ public class Broyeur : Obstacle
     {
         
     }
+
+    public override void LoadScriptobstacle()
+    {
+        base.LoadScriptobstacle();
+    }
 }

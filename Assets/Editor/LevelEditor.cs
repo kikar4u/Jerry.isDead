@@ -41,20 +41,20 @@ public class LevelEditor : EditorWindow
 
     private void OnGUI()
     {
-
-
         DrawLevelInterface();
 
-        GUILayout.Space(10);
-
-
+        GUILayout.Space(5);
 
         if(currentLevel)
         {
+            GUILayout.Label("Durée d'une séquence en second");
+            currentLevel.sequenceDuration = EditorGUILayout.FloatField(currentLevel.sequenceDuration);
+
+            GUILayout.Space(15);
+
             DrawSectionInterface();
         }
 
-        
     }
 
     #region INTERFACE LEVEL

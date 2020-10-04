@@ -2,15 +2,29 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LevelManager : Singleton<LevelManager>
+public class LevelManager : MonoBehaviour
 {
+    private static LevelManager thisOne;
+
+    public static LevelManager Instance
+    {
+        get
+        {
+            if(thisOne == null)
+            {
+                thisOne = FindObjectOfType<LevelManager>();
+            }
+                return thisOne;
+        }
+    }
+
     public List<ScriptableLevel> listLevels = new List<ScriptableLevel>();
     public Level currentLevel;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        currentLevel.gameObject.SetActive(false);
     }
 
     // Update is called once per frame

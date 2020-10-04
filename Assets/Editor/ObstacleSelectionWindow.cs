@@ -50,7 +50,7 @@ public class ObstacleSelectionWindow : EditorWindow
                             PrefabUtility.InstantiatePrefab(ObstacleManager.Instance.ListPrefabObstacles[i].gameObject, troncon.transform) as GameObject;
                         newObjObstacle.TryGetComponent(out troncon.obstacle);
 
-                        troncon.sectionParent.AssignObstacleToScriptSection(ObstacleManager.Instance.ListPrefabObstacles[i], troncon);
+                        troncon.sectionParent.AssignObstacleToScriptSection(ObstacleManager.Instance.ListPrefabObstacles[i].scriptObstacle, troncon);
 
                         SaveSection(troncon.sectionParent.scriptSection);
                     }

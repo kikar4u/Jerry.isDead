@@ -283,3 +283,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cb7aa08b749a424da2c9062387a2b44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scriptObstacle: {fileID: 11400000, guid: 31cc52e827f795644a406396b867b437, type: 2}

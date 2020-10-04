@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class ScriptableSection : ScriptableObject
 {
-    public Obstacle obstacleLeft;
-    public Obstacle obstacleCenter;
-    public Obstacle obstacleRight;
+    public ScriptableObstacle obstacleLeft;
+    public ScriptableObstacle obstacleCenter;
+    public ScriptableObstacle obstacleRight;
+    public GameObject prefabSection;
 }

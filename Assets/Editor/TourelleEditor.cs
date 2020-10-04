@@ -28,27 +28,33 @@ public class TourelleEditor : Editor
 
         GUILayout.Space(10);
 
+        Vector3 direction = new Vector3();
+        ScriptableTourelleAuto scriptTourelle = (ScriptableTourelleAuto)tourelle.scriptObstacle;
+
         if(GUILayout.Button("^\n||", optionsButtonArrowUpDown))
         {
-            tourelle.teteTourelle.transform.LookAt(Vector3.back + tourelle.teteTourelle.transform.position);
+            direction = Vector3.back;
         }
 
         GUILayout.BeginHorizontal();
 
         if (GUILayout.Button("<==", optionsButtonArrowRightLeft))
         {
-            tourelle.teteTourelle.transform.LookAt(Vector3.right + tourelle.teteTourelle.transform.position);
+            direction = Vector3.right;
         }
         if (GUILayout.Button("==>", optionsButtonArrowRightLeft))
         {
-            tourelle.teteTourelle.transform.LookAt(Vector3.left + tourelle.teteTourelle.transform.position);
+            direction = Vector3.left;
         }
 
         GUILayout.EndHorizontal();
 
         if (GUILayout.Button("||\nˇ",optionsButtonArrowUpDown))
         {
-            tourelle.teteTourelle.transform.LookAt(Vector3.forward + tourelle.teteTourelle.transform.position);
+            direction = Vector3.forward;
         }
+
+        tourelle.RotateHead(direction);
+        scriptTourelle.directionTourelle = direction;
     }
 }
