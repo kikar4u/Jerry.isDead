@@ -6,6 +6,8 @@ public class UIManager : Singleton<UIManager>
 {
     public GameObject inventaire;
 
+    public GameObject timeline;
+
 
     public void Init()
     {
@@ -16,5 +18,11 @@ public class UIManager : Singleton<UIManager>
     {
         if(boo) inventaire.GetComponent<InventaireHandler>().Open();
         else inventaire.GetComponent<InventaireHandler>().Close();
+    }
+
+    public void ShowHideTimeline(bool boo = true)
+    {
+        if(boo) timeline.GetComponent<TimelineHandler>().Open();
+        else timeline.GetComponent<TimelineHandler>().Close();
     }
 }
