@@ -17,6 +17,8 @@ public class InventaireHandler : MonoBehaviour
 
     public GameObject playerActionPrefab;
 
+    public GameObject tmpAlgoActionContainer;
+
     public List<AlgoActionEnum> algoActionsList;
     private bool m_isInit;
 

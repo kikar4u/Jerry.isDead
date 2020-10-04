@@ -292,3 +292,6 @@ MonoBehaviour:
   algoActionVisual: {fileID: 3458018867773424793}
   amountOfAction: {fileID: 2375241072932116775}
   algoAction: 0
+  amountOfSpawnableItem: 0
+  algoActionPrefab: {fileID: 3133223041907835494, guid: 0b53ba97f99692748b07813d59886548,
+    type: 3}

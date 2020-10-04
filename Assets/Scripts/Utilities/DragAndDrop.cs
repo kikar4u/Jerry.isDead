@@ -27,12 +27,13 @@ public class DragAndDrop : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndD
     
     public void OnBeginDrag(PointerEventData eventData)
     {
-        Debug.Log("say hello");
         if(isDragAndDroppable)
         {
             isDragging = true;
             lastMousePosition = eventData.position;
             startDragPoint = eventData.position;
+
+            OnStartDragAction();
         }
     }
 
@@ -59,6 +60,11 @@ public class DragAndDrop : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndD
     }
 
     public virtual void OnEndDragAction()
+    {
+        Debug.Log("Cette méthode doit être override");
+    }
+
+    public virtual void OnStartDragAction()
     {
         Debug.Log("Cette méthode doit être override");
     }
