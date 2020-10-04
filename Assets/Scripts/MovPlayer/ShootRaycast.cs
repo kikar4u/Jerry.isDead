@@ -4,21 +4,29 @@ using UnityEngine;
 
 public class ShootRaycast : MonoBehaviour
 {
+    #region Public And Protected Members
     public GameObject m_BulletPref;
     public Transform m_BulletSpawn;
     public float m_BulletSpeed = 30;
     public float m_LifeTime = 3;
+    public float m_ReloadTime = 1f;
+    public int m_MaxAmmo = 10;
+    #endregion
+
     
-    // Start is called before the first frame update
     void Start()
     {
+       _currentAmmo = m_MaxAmmo;
         
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
         LazerDectection();
+   
+        ReloadingGun();
+
         ShootKill();
     }
 
@@ -35,11 +43,38 @@ public class ShootRaycast : MonoBehaviour
         }
     }
 
+    void ReloadingGun()
+    {
+        if(_currentAmmo < m_MaxAmmo)
+
+        if (Input.GetKeyDown(KeyCode.R) && !_isReloading)
+        {   
+              print("je recharge");
+              StartCoroutine(Reload());
+              return;       
+        }
+    }
+
+    IEnumerator Reload()
+    {
+        _isReloading = true;
+        Debug.Log("j'ai Recharge");
+
+        yield return new WaitForSeconds(m_ReloadTime);
+
+        _currentAmmo = m_MaxAmmo;
+        _isReloading = false;
+    }
+
     public void ShootKill ()
     {
         if(Input.GetKeyDown(KeyCode.S))
         {
-            Fire();
+            if(_currentAmmo > 0)
+            {
+                Fire();
+                _currentAmmo--;
+            }
         }
     }
 
@@ -66,5 +101,8 @@ public class ShootRaycast : MonoBehaviour
         Destroy(bullet);
     }
 
-
+    #region Private Members
+    private int _currentAmmo;
+    private bool _isReloading = false;
+    #endregion
 }

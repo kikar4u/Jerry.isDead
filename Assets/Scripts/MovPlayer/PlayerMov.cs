@@ -2,11 +2,11 @@
 
 public class PlayerMov : MonoBehaviour
 {
-    #region Public 
+    #region Public And Protected Members 
     public float m_Speed;
     public float m_PositionMove_x;
-    public float m_MaxHeight;
-    public float m_MinHeight;
+    public float m_MaxWidth;
+    public float m_MinWidth;
     public float m_JumpForce;
     public float m_RayonColision = 0.9f;
 
@@ -31,11 +31,11 @@ public class PlayerMov : MonoBehaviour
     {
         transform.position = Vector3.MoveTowards(transform.position, _targetPosition, m_Speed * Time.deltaTime);
 
-        if (Input.GetKeyDown(KeyCode.LeftArrow) && transform.position.x > m_MaxHeight)
+        if (Input.GetKeyDown(KeyCode.LeftArrow) && transform.position.x > m_MaxWidth)
         {
             _targetPosition = new Vector3(transform.position.x  - m_PositionMove_x, transform.position.y, transform.position.z);
         }
-        else if (Input.GetKeyDown(KeyCode.RightArrow) && transform.position.x < m_MinHeight)
+        else if (Input.GetKeyDown(KeyCode.RightArrow) && transform.position.x < m_MinWidth)
         {
             _targetPosition = new Vector3(transform.position.x + m_PositionMove_x, transform.position.y, transform.position.z);
         }
