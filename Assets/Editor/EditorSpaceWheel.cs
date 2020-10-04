@@ -16,10 +16,18 @@ public class EditorSpaceWheel : Editor
         wheel = (SpaceWheel)target;
 
         GUILayout.Space(15);
-        GUILayout.Label("Nivo à charger");
-        indexLevelToLoad = EditorGUILayout.Popup(indexLevelToLoad, GenListNameLevel());
 
-        wheel.levelToLoad = LevelManager.Instance.listLevels[indexLevelToLoad];
+        if(LevelManager.Instance.listLevels.Count > 0)
+        {
+            GUILayout.Label("Nivo à charger");
+            indexLevelToLoad = EditorGUILayout.Popup(indexLevelToLoad, GenListNameLevel());
+
+            wheel.levelToLoad = LevelManager.Instance.listLevels[indexLevelToLoad];
+        }
+        else
+        {
+            GUILayout.Label("Aucun Nivo à charger");
+        }
 
         GUILayout.Space(10);
 

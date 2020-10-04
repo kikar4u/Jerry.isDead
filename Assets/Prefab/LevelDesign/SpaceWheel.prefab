@@ -283,9 +283,9 @@ MonoBehaviour:
   spawnSection: {fileID: 9127303085227279424}
   pivot: {fileID: 9106349619272393702}
   levelToLoad: {fileID: 0}
-  launchOnPlay: 0
+  launchOnPlay: 1
   nbrSectionOnLoad: 8
-  nbrSectionInCircle: 50
+  nbrSectionInCircle: 27
   rotationDuration: 1
   eventSequenceEnds:
     m_PersistentCalls:

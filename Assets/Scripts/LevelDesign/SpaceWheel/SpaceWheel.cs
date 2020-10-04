@@ -57,7 +57,7 @@ public class SpaceWheel : MonoBehaviour
 
     private void LaunchLevel()
     {
-        if (launchOnPlay)
+        if (launchOnPlay && levelToLoad)
         {
             StartCoroutine(MainRoutine());
         }
