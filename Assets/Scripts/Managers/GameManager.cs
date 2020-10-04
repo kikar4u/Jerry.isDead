@@ -11,7 +11,7 @@ public class GameManager : Singleton<GameManager>
 
     void Start()
     {
-        Time.timeScale = 0.2f;
+        //Time.timeScale = 0.2f;
         Init();
     }
 

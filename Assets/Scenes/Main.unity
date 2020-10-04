@@ -128,10 +128,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6067665772658429863, guid: 095a274be25056b49a3b27451106fe76,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6067665773117347782, guid: 095a274be25056b49a3b27451106fe76,
         type: 3}
       propertyPath: m_Name
       value: Player_Nico
+      objectReference: {fileID: 0}
+    - target: {fileID: 6067665773117347782, guid: 095a274be25056b49a3b27451106fe76,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6067665773117347801, guid: 095a274be25056b49a3b27451106fe76,
         type: 3}
@@ -738,6 +748,11 @@ PrefabInstance:
       propertyPath: levelToLoad
       value: 
       objectReference: {fileID: 889087142}
+    - target: {fileID: 6620232924516347751, guid: b37d962008b8aa34ea2174edef693558,
+        type: 3}
+      propertyPath: rotationDuration
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b37d962008b8aa34ea2174edef693558, type: 3}
 --- !u!114 &350631234 stripped
