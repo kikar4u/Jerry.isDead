@@ -41,6 +41,7 @@ public class SpaceWheel : MonoBehaviour
     private bool isRotating = false;
 
     [HideInInspector] public UnityEvent eventSequenceEnds = new UnityEvent();
+    [HideInInspector] public UnityEvent eventSequenceBegins = new UnityEvent();
 
     // Start is called before the first frame update
     void Start()
@@ -81,7 +82,7 @@ public class SpaceWheel : MonoBehaviour
         GameObject newObjSection = Instantiate(scriptSection.prefabSection, pivot);
 
         newObjSection.transform.position += spawnSection.transform.localPosition;
-        newObjSection.transform.rotation = spawnSection.transform.rotation;
+        newObjSection.transform.rotation = spawnSection.transform.localRotation;
 
         Section newSection;
         newObjSection.TryGetComponent(out newSection);
@@ -103,6 +104,8 @@ public class SpaceWheel : MonoBehaviour
 
         for (int i = indexSection; i < levelToLoad.listSections.Count; i++)
         {
+            eventSequenceBegins.Invoke();
+
             SpawnSectionToRotate(levelToLoad.listSections[i], false);
 
             yield return new WaitWhile(() => isRotating);
