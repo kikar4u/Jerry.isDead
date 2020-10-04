@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/DoTween.meta
 guid: c5673703dadcdee44829a9e82782c7a3
+=======
+guid: f54d1bd14bd3ca042bd867b519fee8cc
+>>>>>>> GD_Branch:Assets/TextMesh Pro.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

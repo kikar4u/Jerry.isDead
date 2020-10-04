@@ -57,3 +57,7 @@ sysinfo.txt
 
 # Crashlytics generated file
 crashlytics-build.properties
+Assets/Animations.meta
+Assets/Resources.meta
+Assets/Sound.meta
+Assets/StreamingAssets.meta
