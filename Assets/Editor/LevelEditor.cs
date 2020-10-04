@@ -7,7 +7,7 @@ public class LevelEditor : EditorWindow
 {
     private Color colorBGDefault;
     private ScriptableLevel currentLevel;
-    private GUILayoutOption[] optionsButton = new GUILayoutOption[2] { GUILayout.Height(40), GUILayout.Width(70) };
+    private GUILayoutOption[] optionsButton = new GUILayoutOption[2] { GUILayout.Height(50), GUILayout.Width(70) };
     private string levelName = "NvNivo";
     private List<ScriptableLevel> levelsToDelet = new List<ScriptableLevel>();
     Vector2 scrollListSectionPosition = new Vector2();
@@ -155,7 +155,7 @@ public class LevelEditor : EditorWindow
 
     private void DrawSectionUnit(ScriptableSection sectionToDraw, int index)
     {
-        GUILayoutOption[] optionsIndex = new GUILayoutOption[2] { GUILayout.Height(30), GUILayout.Width(20) };
+        GUILayoutOption[] optionsIndex = new GUILayoutOption[2] { GUILayout.Height(50), GUILayout.Width(30) };
         GUILayout.BeginHorizontal();
 
         if(GUILayout.Button("" + index, optionsIndex))
@@ -164,18 +164,29 @@ public class LevelEditor : EditorWindow
             Selection.activeGameObject = LevelManager.Instance.currentLevel.listSections[index].gameObject;
         }
 
+        GUILayout.BeginVertical();
         sectionToDraw.name = GUILayout.TextField(sectionToDraw.name);
 
-        if(GUILayout.Button("^"))
+        sectionToDraw.prefabSection = (GameObject)EditorGUILayout.ObjectField("Prefab", sectionToDraw.prefabSection, typeof(GameObject), false);
+        GUILayout.EndVertical();
+
+        
+        if(GUILayout.Button("^", new GUILayoutOption[1] { GUILayout.Height(50) }))
         {
-            currentLevel.MoveDownSection(index);
-            LevelManager.Instance.UnfoldLevel(currentLevel);
+            if(index > 0)
+            {
+                currentLevel.MoveDownSection(index);
+                LevelManager.Instance.UnfoldLevel(currentLevel);
+            }
         }
 
-        if (GUILayout.Button("ˇ"))
+        if (GUILayout.Button("ˇ", new GUILayoutOption[1] { GUILayout.Height(50) }))
         {
-            currentLevel.MoveUpSection(index);
-            LevelManager.Instance.UnfoldLevel(currentLevel);
+            if(index < 0)
+            {
+                currentLevel.MoveUpSection(index);
+                LevelManager.Instance.UnfoldLevel(currentLevel);
+            }
         }
 
         if (GUILayout.Button("Spprimer", optionsButton))

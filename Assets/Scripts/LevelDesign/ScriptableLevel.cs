@@ -16,6 +16,7 @@ public class ScriptableLevel : ScriptableObject
     {
         ScriptableSection newSection = CreateInstance<ScriptableSection>();
         newSection.name = "Section" + listSections.Count;
+        newSection.prefabSection = prefabSection;
         listSections.Add(newSection);
     }
 
@@ -23,6 +24,7 @@ public class ScriptableLevel : ScriptableObject
     {
         ScriptableSection newSection = CreateInstance<ScriptableSection>();
         newSection.name = "Section" + listSections.Count;
+        newSection.prefabSection = prefabSection;
         listSections.Insert(index, newSection);
     }
 
@@ -80,13 +82,15 @@ public class ScriptableLevel : ScriptableObject
 
         foreach (ScriptableSection section in listSections)
         {
+            if (section.prefabSection == null) section.prefabSection = prefabSection;
+
             GameObject newObjSection;
 #if UNITY_EDITOR
             if(!Application.isPlaying)
-                newObjSection = (GameObject)PrefabUtility.InstantiatePrefab(prefabSection, newLevel.transform);
+                newObjSection = (GameObject)PrefabUtility.InstantiatePrefab(section.prefabSection, newLevel.transform);
     #endif
             else
-                newObjSection = Instantiate(prefabSection, newLevel.transform);
+                newObjSection = Instantiate(section.prefabSection, newLevel.transform);
 
             Section newSection;
             newObjSection.TryGetComponent(out newSection);

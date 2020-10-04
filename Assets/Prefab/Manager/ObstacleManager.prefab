@@ -44,4 +44,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ListPrefabObstacles:
-  - {fileID: 2648943370990062906, guid: 300023b62fcb1714b9fa7bee1a2774b2, type: 3}
+  - {fileID: 7664676331308785266, guid: 05999c987ce46134d8750982d41257c9, type: 3}
+  - {fileID: 8811585853313695221, guid: 145acaa5a3e12774792be0c00aa788d4, type: 3}
+  - {fileID: 7509379824282700366, guid: 949104a1aa2f93c49b97ec8d05795e29, type: 3}
+  - {fileID: 9044495070889336552, guid: a2f9843100fd5134a8f0d6b284390d76, type: 3}
+  - {fileID: 592695573288729843, guid: 2b2f6038bb0ca21429469784607a5ad4, type: 3}
+  - {fileID: 8811585853313695221, guid: b30f649c8fd3f5d46b273a264edad420, type: 3}

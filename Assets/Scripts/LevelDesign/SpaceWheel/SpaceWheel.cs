@@ -1,9 +1,25 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+using DG.Tweening;
 
 public class SpaceWheel : MonoBehaviour
 {
+    private static SpaceWheel thisOne;
+
+    public static SpaceWheel Instance
+    {
+        get
+        {
+            if(thisOne == null)
+            {
+                thisOne = FindObjectOfType<SpaceWheel>();
+            }
+            return thisOne;
+        }
+    }
+
     [Header("Refs Prefab")]
     [SerializeField] private GameObject prefabSection;
     [Header("Refs obj utilitaires")]
@@ -20,19 +36,23 @@ public class SpaceWheel : MonoBehaviour
 
     public int nbrSectionOnLoad = 8;
     public float nbrSectionInCircle = 50;
+    public float rotationDuration = 1;
 
-    private bool incurringRotation = false;
+    private bool isRotating = false;
+
+    [HideInInspector] public UnityEvent eventSequenceEnds = new UnityEvent();
 
     // Start is called before the first frame update
     void Start()
     {
         LaunchLevel();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        //pivot.eulerAngles = customPivotRotation;
     }
 
     private void LaunchLevel()
@@ -47,14 +67,14 @@ public class SpaceWheel : MonoBehaviour
     {
         for (int i = 0; i < nbrSectionOnLoad; i++)
         {
-            SpawnSectionToRotate(levelToLoad.listSections[i]);
+            SpawnSectionToRotate(levelToLoad.listSections[i], true);
             indexSection++;
         }
     }
 
-    private void SpawnSectionToRotate(ScriptableSection scriptSection)
+    private void SpawnSectionToRotate(ScriptableSection scriptSection, bool instant)
     {
-        GameObject newObjSection = Instantiate(prefabSection, pivot);
+        GameObject newObjSection = Instantiate(scriptSection.prefabSection, pivot);
 
         newObjSection.transform.position += spawnSection.transform.localPosition;
         newObjSection.transform.rotation = spawnSection.transform.rotation;
@@ -65,8 +85,10 @@ public class SpaceWheel : MonoBehaviour
         newSection.InitializeSection(scriptSection);
         newSection.LoadObstacles();
 
-        RotatePivot();
-        
+        if (instant)
+            RotatePivot();
+        else
+            RotatePivot(rotationDuration);
     }
 
     
@@ -77,21 +99,31 @@ public class SpaceWheel : MonoBehaviour
 
         for (int i = indexSection; i < levelToLoad.listSections.Count; i++)
         {
-            SpawnSectionToRotate(levelToLoad.listSections[i]);
+            SpawnSectionToRotate(levelToLoad.listSections[i], false);
 
-            yield return new WaitWhile(() => incurringRotation);
+            yield return new WaitWhile(() => isRotating);
 
-            yield return new WaitForSeconds(levelToLoad.sequenceDuration);
+            eventSequenceEnds.Invoke();
+
+            yield return new WaitForSeconds(0.5f);
         }
 
     }
 
     private void RotatePivot()
     {
-        incurringRotation = true;
+        isRotating = true;
+        pivot.Rotate(new Vector3(0,0, -360 / nbrSectionInCircle));
 
-        pivot.Rotate(new Vector3(360 / nbrSectionInCircle, 0, 0));
+        isRotating = false;
+    }
 
-        incurringRotation = false;
+    private void RotatePivot(float duration)
+    {
+        Vector3 targetRotation = pivot.eulerAngles;
+
+        targetRotation.z -= 360 / nbrSectionInCircle;
+        isRotating = true;
+        pivot.DORotate(targetRotation, duration).OnComplete(() => isRotating = false);
     }
 }

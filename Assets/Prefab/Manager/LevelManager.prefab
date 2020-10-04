@@ -45,3 +45,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   listLevels:
   - {fileID: 0}
+  - {fileID: 0}
+  currentLevel: {fileID: 0}
