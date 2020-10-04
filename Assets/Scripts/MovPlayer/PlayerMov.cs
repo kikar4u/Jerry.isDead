@@ -21,7 +21,6 @@ public class PlayerMov : MonoBehaviour
     }
 
     
-
     void Update()
     {
         MovePlayer();
@@ -57,6 +56,7 @@ public class PlayerMov : MonoBehaviour
             m_Col.radius * m_RayonColision, m_groundLayers);      
     }
 
+   
 
     #region Private
     private Vector3 _targetPosition;
