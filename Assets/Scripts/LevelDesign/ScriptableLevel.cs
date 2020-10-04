@@ -95,15 +95,18 @@ public class ScriptableLevel : ScriptableObject
             {
                 if (section.obstacleLeft)
                 {
-                    PrefabUtility.InstantiatePrefab(section.obstacleLeft.gameObject, newSection.tronconLeft.transform);
+                    GameObject newObjObstacle = (GameObject)PrefabUtility.InstantiatePrefab(section.obstacleLeft.gameObject, newSection.tronconLeft.transform);
+                    newObjObstacle.TryGetComponent(out newSection.tronconLeft.obstacle);
                 }
                 if (section.obstacleCenter)
                 {
-                    PrefabUtility.InstantiatePrefab(section.obstacleCenter.gameObject, newSection.tronconCenter.transform);
+                    GameObject newObjObstacle = (GameObject)PrefabUtility.InstantiatePrefab(section.obstacleCenter.gameObject, newSection.tronconCenter.transform);
+                    newObjObstacle.TryGetComponent(out newSection.tronconCenter.obstacle);
                 }
                 if (section.obstacleRight)
                 {
-                    PrefabUtility.InstantiatePrefab(section.obstacleRight.gameObject, newSection.tronconRight.transform);
+                    GameObject newObjObstacle = (GameObject)PrefabUtility.InstantiatePrefab(section.obstacleRight.gameObject, newSection.tronconRight.transform);
+                    newObjObstacle.TryGetComponent(out newSection.tronconRight.obstacle);
                 }
             }
 

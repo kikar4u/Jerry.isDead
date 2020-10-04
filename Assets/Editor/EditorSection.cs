@@ -33,7 +33,7 @@ public class EditorSection : Editor
         string[] listChoicesObstacles = CreateListNameObstacles();
         string nomObstacle;
 
-        section.name = section.scriptSection.name;
+        if(section.scriptSection)section.name = section.scriptSection.name;
 
         GUILayout.BeginHorizontal();
 

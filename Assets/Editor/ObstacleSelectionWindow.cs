@@ -5,7 +5,7 @@ using UnityEditor;
 
 public class ObstacleSelectionWindow : EditorWindow
 {
-    GUILayoutOption[] optionsButtonObstacle = new GUILayoutOption[2] { GUILayout.Height(70), GUILayout.Width(70)};
+    GUILayoutOption[] optionsButtonObstacle = new GUILayoutOption[2] { GUILayout.Height(80), GUILayout.Width(80)};
 
     int colonnes = 4;
 
@@ -22,7 +22,7 @@ public class ObstacleSelectionWindow : EditorWindow
         GUILayout.BeginHorizontal();
         for (int i = 0; i < ObstacleManager.Instance.ListPrefabObstacles.Count + 1; i++)
         {
-            if (i % colonnes == 0)
+            if (i % colonnes == 0 && i != 0)
             {
                 GUILayout.EndHorizontal();
             }
@@ -57,7 +57,7 @@ public class ObstacleSelectionWindow : EditorWindow
                 }
             }
 
-            if (i % colonnes == 0)
+            if (i % colonnes == 0 && i != 0)
             {
                 GUILayout.BeginHorizontal();
             }
