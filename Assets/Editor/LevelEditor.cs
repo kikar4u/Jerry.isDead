@@ -29,6 +29,11 @@ public class LevelEditor : EditorWindow
         SaveAllLevels();
     }
 
+    private void OnLostFocus()
+    {
+        SaveAllLevels();
+    }
+
     private void Update()
     {
         
@@ -107,11 +112,14 @@ public class LevelEditor : EditorWindow
         }
         if (GUILayout.Button("Supprimer", optionsButton))
         {
-            if(levelToDraw == currentLevel)
+            if(EditorUtility.DisplayDialog("Supprimer Nivo", "T'es sûr de vouloir supprimer ce nivo ?", "Ouai ouai !", "Oups non..."))
             {
-                LevelManager.Instance.DeleteCurrentLevel();
+                if(levelToDraw == currentLevel)
+                {
+                    LevelManager.Instance.DeleteCurrentLevel();
+                }
+                levelsToDelet.Add(levelToDraw);
             }
-            levelsToDelet.Add(levelToDraw);
         }
 
         GUILayout.EndHorizontal();
@@ -185,6 +193,8 @@ public class LevelEditor : EditorWindow
     {
         AssetDatabase.Refresh();
         EditorUtility.SetDirty(levelToSave);
+        if(LevelManager.Instance.currentLevel) EditorUtility.SetDirty(LevelManager.Instance.currentLevel);
+        EditorUtility.SetDirty(LevelManager.Instance);
         AssetDatabase.SaveAssets();
     }
 
