@@ -7,8 +7,11 @@ public class GameManager : Singleton<GameManager>
     public GameObject currentGameObjectDragged;
     [HideInInspector] public int levelChucks;
 
+    public GameObject character;
+
     void Start()
     {
+        Time.timeScale = 0.2f;
         Init();
     }
 

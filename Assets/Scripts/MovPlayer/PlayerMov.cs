@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using DG.Tweening;
 
 public class PlayerMov : MonoBehaviour
 {
@@ -20,30 +21,26 @@ public class PlayerMov : MonoBehaviour
         m_Col = GetComponentInChildren<CapsuleCollider>();
     }
 
-    
-    void Update()
+    public void MovePlayer(InventaireHandler.AlgoActionEnum direction)
     {
-        MovePlayer();
-        Jump();
-    }
-
-    public void MovePlayer()
-    {
+        Debug.Log("Move Player");
         transform.position = Vector3.MoveTowards(transform.position, _targetPosition, m_Speed * Time.deltaTime);
 
-        if (Input.GetKeyDown(KeyCode.LeftArrow) && transform.position.x > m_MaxWidth)
+        if (direction == InventaireHandler.AlgoActionEnum.Left && transform.position.x > m_MaxWidth)
         {
-            _targetPosition = new Vector3(transform.position.x  - m_PositionMove_x, transform.position.y, transform.position.z);
+            _targetPosition = new Vector3(transform.position.x , transform.position.y, transform.position.z + m_PositionMove_x);
+            transform.DOMove(_targetPosition, 1.0f);
         }
-        else if (Input.GetKeyDown(KeyCode.RightArrow) && transform.position.x < m_MinWidth)
+        else if (direction == InventaireHandler.AlgoActionEnum.Right && transform.position.x < m_MinWidth)
         {
-            _targetPosition = new Vector3(transform.position.x + m_PositionMove_x, transform.position.y, transform.position.z);
+            _targetPosition = new Vector3(transform.position.x , transform.position.y, transform.position.z - m_PositionMove_x);
+            transform.DOMove(_targetPosition, 1.0f);
         }
     }
 
     public void Jump ()
     {
-        if(IsGrounded() && Input.GetKeyDown(KeyCode.Space))
+        if(IsGrounded())
         {
             m_Rb.AddForce(Vector3.up * m_JumpForce, ForceMode.Impulse);
             Debug.Log("Go Jump plz");
