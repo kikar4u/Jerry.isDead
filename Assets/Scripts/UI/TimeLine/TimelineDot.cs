@@ -17,6 +17,8 @@ public class TimelineDot : MonoBehaviour, IPointerEnterHandler
 
     public bool actionUsed;
 
+    public List<AlgoAction> algoActionList;
+
     public void OnPointerEnter(PointerEventData pointerEventData)
     {
         GetComponentInParent<DotsHandler>().LastMouseOverlap = this.gameObject;
@@ -32,6 +34,7 @@ public class TimelineDot : MonoBehaviour, IPointerEnterHandler
                 algoAction.gameObject.transform.SetParent(dotDirection.transform);
                 algoAction.GetComponent<RectTransform>().transform.position = dotDirection.GetComponent<RectTransform>().transform.position;
                 algoAction.transform.localScale = new Vector3(0.3f,0.3f);
+                algoActionList.Add(algoAction);
             }
         }
         else if(algoAction.m_actionData.actionType == Action.ActionType.Action)
@@ -42,6 +45,7 @@ public class TimelineDot : MonoBehaviour, IPointerEnterHandler
                 algoAction.gameObject.transform.SetParent(dotAction.transform);
                 algoAction.GetComponent<RectTransform>().transform.position = dotAction.GetComponent<RectTransform>().transform.position;
                 algoAction.transform.localScale = new Vector3(0.3f,0.3f);
+                algoActionList.Add(algoAction);
             }
         }
     }
@@ -50,10 +54,12 @@ public class TimelineDot : MonoBehaviour, IPointerEnterHandler
     {
         if(algoAction.m_actionData.actionType == Action.ActionType.Direction)
         {
+            algoActionList.Remove(algoAction);
             directionUsed = false;
         }
         else if(algoAction.m_actionData.actionType == Action.ActionType.Action)
         {
+            algoActionList.Remove(algoAction);
             actionUsed = false;
         }
     }

@@ -5,7 +5,7 @@ using System.Linq;
 
 public class InventaireHandler : MonoBehaviour
 {
-    public enum AlgoActionEnum {Up, Right, Left, Shoot, Activate};
+    public enum AlgoActionEnum {Up, Right, Left, Shoot, Activate, Walk, Reload};
 
     public Dictionary<AlgoActionEnum, int> playerActions;
 
@@ -42,6 +42,8 @@ public class InventaireHandler : MonoBehaviour
         playerActions.Add(AlgoActionEnum.Left,1);
         playerActions.Add(AlgoActionEnum.Activate,5);
         playerActions.Add(AlgoActionEnum.Shoot,2);
+        playerActions.Add(AlgoActionEnum.Reload,2);
+        playerActions.Add(AlgoActionEnum.Walk,8);
 
         actionScriptableArray = Resources.LoadAll<Action>("Action").ToList();
     }

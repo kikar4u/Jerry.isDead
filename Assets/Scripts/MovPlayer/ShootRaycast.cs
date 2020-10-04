@@ -24,10 +24,6 @@ public class ShootRaycast : MonoBehaviour
     void Update()
     {
         LazerDectection();
-   
-        ReloadingGun();
-
-        ShootKill();
     }
 
     public void LazerDectection ()
@@ -43,7 +39,7 @@ public class ShootRaycast : MonoBehaviour
         }
     }
 
-    void ReloadingGun()
+    public void ReloadingGun()
     {
         if(_currentAmmo < m_MaxAmmo)
 
@@ -66,20 +62,26 @@ public class ShootRaycast : MonoBehaviour
         _isReloading = false;
     }
 
-    public void ShootKill ()
+    public void ShootKill (InventaireHandler.AlgoActionEnum direction)
     {
-        if(Input.GetKeyDown(KeyCode.S))
+        if(_currentAmmo > 0)
         {
-            if(_currentAmmo > 0)
-            {
-                Fire();
-                _currentAmmo--;
-            }
+            Fire(direction);
+            _currentAmmo--;
         }
+        
     }
 
-    private void Fire()
+    private void Fire(InventaireHandler.AlgoActionEnum direction)
     {
+        Vector3 dir = Vector3.forward;
+        if(direction == InventaireHandler.AlgoActionEnum.Left)
+            dir = Vector3.left;
+        if(direction == InventaireHandler.AlgoActionEnum.Right)
+            dir = Vector3.right;
+        if(direction == InventaireHandler.AlgoActionEnum.Up)
+            dir = Vector3.forward;
+
         GameObject bullet = Instantiate(m_BulletPref);
         Physics.IgnoreCollision(bullet.GetComponent<Collider>(), m_BulletSpawn.parent.parent.GetComponent<Collider>());
 
@@ -88,7 +90,7 @@ public class ShootRaycast : MonoBehaviour
 
         bullet.transform.rotation = Quaternion.Euler(rotation.x, transform.eulerAngles.y, rotation.z);
 
-        bullet.GetComponent<Rigidbody>().AddForce(m_BulletSpawn.forward * m_BulletSpeed, ForceMode.Impulse);
+        bullet.GetComponent<Rigidbody>().AddForce(dir * m_BulletSpeed , ForceMode.Impulse);
 
         StartCoroutine(DestroyBulleAfterTime(bullet, m_LifeTime));
 
