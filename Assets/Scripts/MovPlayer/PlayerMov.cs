@@ -14,12 +14,6 @@ public class PlayerMov : MonoBehaviour
     #endregion
 
 
-    private void Awake()
-    {
-        m_Rb = GetComponentInChildren<Rigidbody>();
-        m_Col = GetComponentInChildren<CapsuleCollider>();
-    }
-
     
     void Update()
     {
@@ -60,7 +54,9 @@ public class PlayerMov : MonoBehaviour
 
     #region Private
     private Vector3 _targetPosition;
+    [SerializeField]
     private Rigidbody m_Rb;
+    [SerializeField]
     private CapsuleCollider m_Col;
     #endregion
 
