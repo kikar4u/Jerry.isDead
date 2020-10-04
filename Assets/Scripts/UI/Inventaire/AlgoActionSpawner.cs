@@ -24,6 +24,7 @@ public class AlgoActionSpawner : MonoBehaviour
         set {
             amountOfSpawnableItem = value;
             amountOfAction.text = value.ToString();
+            ChangeImageSpawner();
         }
     }
 
@@ -40,6 +41,22 @@ public class AlgoActionSpawner : MonoBehaviour
         currentAlgoActionSpawned = null;
 
         Spawn();
+    }
+
+    private void ChangeImageSpawner()
+    {
+        if(AmountOfSpawnableItem>0)
+        {
+            algoActionVisual.sprite = m_actionData.actionActivated;
+        }
+        else if (AmountOfSpawnableItem == 0)
+        {
+            algoActionVisual.sprite = m_actionData.actionDeactivated;
+        }
+        else
+        {
+            algoActionVisual.sprite = m_actionData.actionEmpty;
+        }
     }
 
     public void OnPointerEnter(PointerEventData eventData)
@@ -72,6 +89,7 @@ public class AlgoActionSpawner : MonoBehaviour
         if(isDragged)
         {
             AmountOfSpawnableItem--;
+            currentAlgoActionSpawned.GetComponent<DragAndDrop>().OnDragBoolChange -= ChildGotDragged;
             currentAlgoActionSpawned = null;
         }
     }
