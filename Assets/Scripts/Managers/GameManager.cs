@@ -15,6 +15,7 @@ public class GameManager : Singleton<GameManager>
     void Init()
     {
         SpaceWheel.Instance.Init();
+        //SpaceWheel.Instance.levelToLoad.listSections.Count;
         UIManager.Instance.Init();
     }
 
