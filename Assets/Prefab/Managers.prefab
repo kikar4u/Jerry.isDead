@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventaire: {fileID: 0}
+  timeline: {fileID: 0}
 --- !u!1 &2929237458837170886
 GameObject:
   m_ObjectHideFlags: 0
@@ -87,6 +88,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc10a4341c73f3d4db3d5f29e1c32ecc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentGameObjectDragged: {fileID: 0}
 --- !u!1 &3570788101593178221
 GameObject:
   m_ObjectHideFlags: 0

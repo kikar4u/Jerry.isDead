@@ -12,6 +12,7 @@ public class UIManager : Singleton<UIManager>
     public void Init()
     {
         ShowHideInventaire();
+        ShowHideTimeline();
     }
 
     public void ShowHideInventaire(bool boo = true)

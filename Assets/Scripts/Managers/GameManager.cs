@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class GameManager : Singleton<GameManager>
 {
+
+    public GameObject currentGameObjectDragged;
+
     void Start()
     {
         Init();

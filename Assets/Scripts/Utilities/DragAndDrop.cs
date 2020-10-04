@@ -8,6 +8,8 @@ public class DragAndDrop : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndD
     private Vector2 lastMousePosition;
     public bool isDragAndDroppable = true;
     protected Vector3 startDragPoint;
+
+    protected Transform startParent;
     protected float DragDistance
     {
         get {return Mathf.Abs(Input.mousePosition.y - startDragPoint.y);}
@@ -29,6 +31,7 @@ public class DragAndDrop : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndD
     {
         if(isDragAndDroppable)
         {
+            startParent = transform.parent;
             isDragging = true;
             lastMousePosition = eventData.position;
             startDragPoint = eventData.position;

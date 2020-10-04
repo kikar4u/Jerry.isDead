@@ -6,28 +6,71 @@ using UnityEngine.EventSystems;
 
 public class AlgoAction : DragAndDrop
 {
-    private Action m_actionData;
+    [HideInInspector]public Action m_actionData;
 
     public Image algoActionImage;
 
+    public Image plugedImage;
+
+    private RectTransform startState;
+
+    [HideInInspector] public AlgoActionSpawner initialSpawner;
+
     public void SetupAlgoAction(Action action)
     {
+        startState = GetComponent<RectTransform>();
         m_actionData = action;
         isDragAndDroppable = true;
         isDragging = true;
         algoActionImage.sprite = action.actionActivated;
-        SetVisibility(0.0f);
+        Utility.ChangeAlpha(algoActionImage, 0.0f);
     }
 
-    private void SetVisibility(float alpha)
+    private void SetVisibility(float alpha, Image target)
     {
-        Utility.ChangeAlpha(algoActionImage, alpha);
+        Utility.ChangeAlpha(target, alpha);
     }
 
     public override void OnStartDragAction()
     {
-        base.OnStartDragAction();
         transform.SetParent(UIManager.Instance.inventaire.GetComponent<InventaireHandler>().tmpAlgoActionContainer.transform);
-        SetVisibility(1.0f);
+        Utility.ChangeAlpha(algoActionImage, 1.0f);
+        algoActionImage.raycastTarget = false;
+        Utility.ChangeAlpha(plugedImage, 0.0f);
+        plugedImage.raycastTarget = false;
+        GameManager.Instance.currentGameObjectDragged = this.gameObject;
+
+        if(startParent.GetComponentInParent<TimelineDot>())
+        {
+            startParent.GetComponentInParent<TimelineDot>().RemoveAlgoAction(this);
+        }
+    }
+
+    public override void OnEndDragAction()
+    {
+        GameObject targetDot = UIManager.Instance.timeline.GetComponent<TimelineHandler>().timeLineDotContainer.GetComponent<DotsHandler>().LastMouseOverlap;
+        if(targetDot != null)
+        {
+            targetDot.GetComponent<TimelineDot>().AddAlgoAction(this);
+            SetPluged();
+        }
+        else
+        {
+            ReturnToStartState();
+        }
+        algoActionImage.raycastTarget = true;
+        plugedImage.raycastTarget = true;
+        GameManager.Instance.currentGameObjectDragged = null;
+    }
+
+    public void SetPluged()
+    {
+        Utility.ChangeAlpha(plugedImage, 1.0f);
+    }
+
+    private void ReturnToStartState()
+    {
+        initialSpawner.AmountOfSpawnableItem++;
+        Destroy(this.gameObject);
     }
 }

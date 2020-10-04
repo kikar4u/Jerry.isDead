@@ -79,8 +79,9 @@ public class AlgoActionSpawner : MonoBehaviour
             go.GetComponent<AlgoAction>().SetupAlgoAction(m_actionData);
             go.transform.SetParent(transform);
             currentAlgoActionSpawned = go;
+            go.GetComponent<AlgoAction>().initialSpawner = this;
 
-            currentAlgoActionSpawned.GetComponent<DragAndDrop>().OnDragBoolChange += ChildGotDragged;
+            AddDragListener();
         }
     }
 
@@ -92,5 +93,10 @@ public class AlgoActionSpawner : MonoBehaviour
             currentAlgoActionSpawned.GetComponent<DragAndDrop>().OnDragBoolChange -= ChildGotDragged;
             currentAlgoActionSpawned = null;
         }
+    }
+
+    public void AddDragListener()
+    {
+        currentAlgoActionSpawned.GetComponent<DragAndDrop>().OnDragBoolChange += ChildGotDragged;
     }
 }
