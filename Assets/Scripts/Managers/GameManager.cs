@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class GameManager : Singleton<GameManager>
 {
-
     public GameObject currentGameObjectDragged;
+    [HideInInspector] public int levelChucks;
 
     void Start()
     {
@@ -15,7 +15,7 @@ public class GameManager : Singleton<GameManager>
     void Init()
     {
         SpaceWheel.Instance.Init();
-        //SpaceWheel.Instance.levelToLoad.listSections.Count;
+        levelChucks = SpaceWheel.Instance.levelToLoad.listSections.Count;
         UIManager.Instance.Init();
     }
 

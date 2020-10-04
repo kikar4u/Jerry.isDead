@@ -7,7 +7,6 @@ public class TimelineHandler : MonoBehaviour
 {   
     private bool m_isInit;
 
-    [Range(0,120)]
     public float timelineDuration;
 
     public GameObject timeLineDotContainer;
@@ -37,6 +36,7 @@ public class TimelineHandler : MonoBehaviour
 
     public void Open()
     {
+        timelineDuration = GameManager.Instance.levelChucks;
         if(!m_isInit) Init();
         canStart = true;
     }
