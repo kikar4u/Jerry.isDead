@@ -38,7 +38,7 @@ public class InventaireHandler : MonoBehaviour
         /* pas eu le temps d'ajouter la serialisation des dictionnaires sur unity (go plugin) -> TODO*/
         playerActions.Add(AlgoActionEnum.Up,2);
         playerActions.Add(AlgoActionEnum.Right,1);
-        playerActions.Add(AlgoActionEnum.Left,1);
+        playerActions.Add(AlgoActionEnum.Left,5);
         playerActions.Add(AlgoActionEnum.Activate,5);
         playerActions.Add(AlgoActionEnum.Shoot,2);
         playerActions.Add(AlgoActionEnum.Reload,2);

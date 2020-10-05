@@ -14,8 +14,11 @@ public class ShootRaycast : MonoBehaviour
     public int m_MaxAmmo = 10;
     #endregion
 
-    public string shoot = "";
-    public string reload = "";
+    #region Private Members
+    private int _currentAmmo;
+    private bool _isReloading = false;
+    #endregion
+
     void Start()
     {
        _currentAmmo = m_MaxAmmo;
@@ -24,6 +27,19 @@ public class ShootRaycast : MonoBehaviour
     
     void Update()
     {
+        if (Input.GetKeyUp(KeyCode.A))
+        {
+            SpawnBullet(Bullet.directionBullet.left);
+        }
+        if (Input.GetKeyUp(KeyCode.Z))
+        {
+            SpawnBullet(Bullet.directionBullet.center);
+        }
+        if (Input.GetKeyUp(KeyCode.E))
+        {
+            SpawnBullet(Bullet.directionBullet.right);
+        }
+
         LazerDectection();
     }
 
@@ -52,7 +68,7 @@ public class ShootRaycast : MonoBehaviour
         }
     }
 
-    IEnumerator Reload()
+    private IEnumerator Reload()
     {
         _isReloading = true;
         Debug.Log("j'ai Recharge");
@@ -75,50 +91,41 @@ public class ShootRaycast : MonoBehaviour
 
     private void Fire(InventaireHandler.AlgoActionEnum direction)
     {
-        FMODUnity.RuntimeManager.PlayOneShot(shoot, transform.position);
-        Vector3 dir = Vector3.forward;
-        if(direction == InventaireHandler.AlgoActionEnum.Left)
+        GameObject jerrysHead = PlayerMov.Instance.jerrysHead;
+        if (direction == InventaireHandler.AlgoActionEnum.Left)
         {
-            dir = Vector3.left;
-            GetComponentInChildren<Rigidbody>().DORotate(new Vector3(0f,90f - 45f,0f), 0.5f).OnComplete(() =>
+            jerrysHead.transform.DORotate(new Vector3(jerrysHead.transform.eulerAngles.x, -45f, jerrysHead.transform.eulerAngles.z), 0.3f).OnComplete(() =>
             {
-                SpwonBullet(Bullet.directionBullet.left);
-                GetComponentInChildren<Rigidbody>().DORotate(new Vector3(0f, 90f, 0f), 0.5f);
+                SpawnBullet(Bullet.directionBullet.left);
+                jerrysHead.transform.DORotate(new Vector3(0f, 0f, 0f), 0.5f);
             });
         }
             
         if(direction == InventaireHandler.AlgoActionEnum.Right)
         {
-            dir = Vector3.right;
-            GetComponentInChildren<Rigidbody>().DORotate(new Vector3(0f, 90f + 45f, 0f), 0.5f).OnComplete(() =>
+            jerrysHead.transform.DORotate(new Vector3(jerrysHead.transform.eulerAngles.x, 45f, jerrysHead.transform.eulerAngles.z), 0.3f).OnComplete(() =>
             {
-                SpwonBullet(Bullet.directionBullet.right);
-                GetComponentInChildren<Rigidbody>().DORotate(new Vector3(0f, 90f, 0f), 0.5f);
+                SpawnBullet(Bullet.directionBullet.right);
+                jerrysHead.transform.DORotate(new Vector3(0f, 0f, 0f), 0.5f);
             });
         }
             
         if(direction == InventaireHandler.AlgoActionEnum.Up)
         {
-           dir = Vector3.forward;
-           SpwonBullet(Bullet.directionBullet.center);
-
+           SpawnBullet(Bullet.directionBullet.center);
         }
     }
 
-    void SpwonBullet(Bullet.directionBullet direction)
+    void SpawnBullet(Bullet.directionBullet direction)
     {
         GameObject bullet = Instantiate(m_BulletPref);
-        Physics.IgnoreCollision(bullet.GetComponent<Collider>(), m_BulletSpawn.parent.parent.GetComponent<Collider>());
+        //Physics.IgnoreCollision(bullet.GetComponent<Collider>(), m_BulletSpawn.parent.parent.GetComponent<Collider>());
 
-        bullet.transform.position = m_BulletSpawn.position;
+        bullet.transform.position = m_BulletSpawn.transform.position;
+        bullet.transform.Rotate(new Vector3(0, 90, 0));
         bullet?.GetComponent<Bullet>().Fire(direction);
     }
 
    
 
-    #region Private Members
-    private int _currentAmmo;
-    private bool _isReloading = false;
-    
-    #endregion
 }
