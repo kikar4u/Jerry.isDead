@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 6e5b0b688aa4b4546b7245823e01867b
+guid: 2cc416b0f98f3c24da526fcb6e743bbc
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
@@ -7,24 +7,13 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: blinn1
-    second: {fileID: 6271573414225017425, guid: 41632300e29b96740af9d3179e83dcbb,
-      type: 3}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: blinn2
-    second: {fileID: 2100000, guid: e73292d00bc31284795e9b33a75ac0cb, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: blinn3
-    second: {fileID: 2100000, guid: 5c722970099d90341965bc43de770b4c, type: 2}
+      name: lambert1
+    second: {fileID: 2100000, guid: 40b20a58066d23b4ebf9aee8de8ce1c9, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
