@@ -231,7 +231,7 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 112
@@ -247,6 +247,7 @@ GameObject:
   - component: {fileID: 6067665773117347801}
   - component: {fileID: 6067665773117347800}
   - component: {fileID: 6067665773117347803}
+  - component: {fileID: 1190154437}
   m_Layer: 8
   m_Name: Player_Nico
   m_TagString: Untagged
@@ -285,7 +286,7 @@ MonoBehaviour:
   m_PositionMove_x: 3
   m_MaxWidth: -3
   m_MinWidth: 3
-  m_JumpForce: 7
+  m_JumpForce: 4
   m_RayonColision: 0.9
   m_groundLayers:
     serializedVersion: 2
@@ -305,7 +306,20 @@ MonoBehaviour:
   m_BulletPref: {fileID: 8569828668408439495, guid: e31f484fa0340994696139506131dd4f,
     type: 3}
   m_BulletSpawn: {fileID: 6067665772066220004}
-  m_BulletSpeed: 30
+  m_BulletSpeed: 200
   m_LifeTime: 3
   m_ReloadTime: 0.5
   m_MaxAmmo: 1
+--- !u!65 &1190154437
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6067665773117347782}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.5937119, z: 1}
+  m_Center: {x: -0, y: 0.9454107, z: 0}
