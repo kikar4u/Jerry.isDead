@@ -61,6 +61,7 @@ public class SpaceWheel : MonoBehaviour
 
     public void Init()
     {
+        breakRotation = false;
         ClearNivo();
         isRotating = false;
         levelToLoad = campagneToLoad.listLevels[indexCampagne];

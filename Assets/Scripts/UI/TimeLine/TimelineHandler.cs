@@ -12,6 +12,7 @@ public class TimelineHandler : MonoBehaviour
     public float timelineDuration;
 
     public GameObject timeLineDotContainer;
+    private float timeLineDotContainerInitialPositionX = 24.49701f;
     public GameObject dotPrefab;
 
     public GameObject scrollView;
@@ -36,8 +37,6 @@ public class TimelineHandler : MonoBehaviour
             isMouseOnTimeLine = value;
         }
     }
-
-    public bool stopScrollDown;
     private int amountOfDotScrolledDown = 0;
     public void Open()
     {
@@ -53,6 +52,7 @@ public class TimelineHandler : MonoBehaviour
         //se brancher sur l'event de leo
         SpaceWheel.Instance.eventSequenceEnds.AddListener(
             ()=>{
+                Debug.Log("CALLED");
                 MoveTimelineDown();
             }
         );
@@ -61,11 +61,6 @@ public class TimelineHandler : MonoBehaviour
     public void Close()
     {
         canStart = false;
-    }
-
-    public void Reset()
-    {
-
     }
 
     private void Update() 
@@ -95,9 +90,9 @@ public class TimelineHandler : MonoBehaviour
 
     private void MoveTimelineDown()
     {
-        timeLineDotContainer.transform.DOMoveY(-dotPrefab.GetComponent<RectTransform>().rect.height * amountOfDotScrolledDown , 1.5f).OnComplete(
+        timeLineDotContainer.transform.DOMoveY(-dotPrefab.GetComponent<RectTransform>().rect.height * amountOfDotScrolledDown , SpaceWheel.Instance.rotationDuration - 0.1f).OnComplete(
             ()=>{
-                if(!stopScrollDown)
+                if(GameManager.Instance.isGameActive)
                 {
                     if(amountOfDotScrolledDown < timelineDuration)
                     {
@@ -107,11 +102,13 @@ public class TimelineHandler : MonoBehaviour
                 }
             }
         );
+        Debug.Log("----------");
+
     }
 
     private void ReadAction()
     {
-        Debug.Log("READ ACTION");
+        Debug.Log("READ ACTION de : "+amountOfDotScrolledDown);
         dotPrefabList[amountOfDotScrolledDown].GetComponent<Image>().color = Color.red;
 
         List<AlgoAction> algoActionList = dotPrefabList[amountOfDotScrolledDown].GetComponent<TimelineDot>().algoActionList;
@@ -119,7 +116,7 @@ public class TimelineHandler : MonoBehaviour
         if(direction != null)
             lastDirection = direction;
 
-        Debug.Log("lastDirection is "+lastDirection.m_actionData.actionName);
+        //Debug.Log("lastDirection is "+lastDirection.m_actionData.actionName);
 
         AlgoAction action = algoActionList.Find(x => x.m_actionData.actionType == Action.ActionType.Action);
 
@@ -141,14 +138,32 @@ public class TimelineHandler : MonoBehaviour
                 break;
 
                 case InventaireHandler.AlgoActionEnum.Walk :
-                    Debug.Log("Walk");
-                    if(lastDirection.m_actionData.actionName == InventaireHandler.AlgoActionEnum.Up)
-                        GameManager.Instance.character.GetComponent<PlayerMov>().Jump();
-                    else
-                        GameManager.Instance.character.GetComponent<PlayerMov>().MovePlayer(lastDirection.m_actionData.actionName);
+                    Debug.Log("Walk to the "+lastDirection.m_actionData.actionName);
+                    if(lastDirection != null)
+                    {
+                        if(lastDirection.m_actionData.actionName == InventaireHandler.AlgoActionEnum.Up)
+                            GameManager.Instance.character.GetComponent<PlayerMov>().Jump();
+                        else
+                            GameManager.Instance.character.GetComponent<PlayerMov>().MovePlayer(lastDirection.m_actionData.actionName);
+                    }
                 break;
             }
         }
+    }
+
+    public void Restart()
+    {
+        Debug.Log("<color=red>resqtart</color>");
+
+        foreach(GameObject go in dotPrefabList)
+        {
+            go.GetComponent<Image>().color = Color.white;
+        }
+        canStart = false;
+        timeLineDotContainer.transform.DOMoveX(timeLineDotContainerInitialPositionX - timeLineDotContainer.GetComponent<RectTransform>().rect.x + 14 + 24.5f, 0.5f);
+        amountOfDotScrolledDown = 0;
+        timeLineDotContainer.transform.position = Vector3.zero;
+        currentTime = 0;
     }
 
 

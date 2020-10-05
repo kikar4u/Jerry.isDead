@@ -27,7 +27,6 @@ public class InventaireHandler : MonoBehaviour
     public void Open()
     {
         if(!m_isInit) Init();
-        DisplayPlayerActions();
     }
 
     void Init()
@@ -46,6 +45,8 @@ public class InventaireHandler : MonoBehaviour
         playerActions.Add(AlgoActionEnum.Walk,8);
 
         actionScriptableArray = Resources.LoadAll<Action>("Action").ToList();
+
+        DisplayPlayerActions();
     }
 
     private void DisplayPlayerActions()
@@ -106,10 +107,5 @@ public class InventaireHandler : MonoBehaviour
     public void Close()
     {
 
-    }
-
-    void Reset()
-    {
-        m_isInit = false;
     }
 }

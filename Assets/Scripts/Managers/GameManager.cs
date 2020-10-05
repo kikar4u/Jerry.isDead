@@ -1,42 +1,53 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : Singleton<GameManager>
 {
-    public bool isslowDown = true;
+    public bool isGameActive;
+    public bool isSlowedDown = true;
     public GameObject currentGameObjectDragged;
     [HideInInspector] public int levelChucks;
+
+    private bool isGamePaused;
 
     public GameObject character;
 
     void Start()
     {
-        if(isslowDown)
-        Time.timeScale = 0.2f;
-        Init();
+        if(isSlowedDown)
+            Time.timeScale = 0.2f;
+
+        //SpaceWheel.Instance.Init();
+
     }
 
-    void Init()
+    public void Init()
     {
         SpaceWheel.Instance.Init();
+
+        isGameActive = true;
         levelChucks = SpaceWheel.Instance.levelToLoad.listSections.Count;
         UIManager.Instance.Init();
     }
 
     public void GameOver()
     {
+        isGameActive = false;
+        Debug.Log("GameOver");
         SpaceWheel.Instance.breakRotation = true;
 
         //Faudra peut-être attendre que l'annim' de mort se termine.
 
-        RestartLevel();
+        Invoke("RestartLevel",3f);
     }
 
     private void RestartLevel()
     {
         //Player Init()
-        SpaceWheel.Instance.Init();
+        UIManager.Instance.Restart();
+        Init();
     }
 
     public void GameWin()
@@ -64,6 +75,42 @@ public class GameManager : Singleton<GameManager>
             print("Jeu fini");
         }
 
+    }
+
+    public void PauseGame()
+    {
+        isGamePaused = !isGamePaused;
+        UIManager.Instance.ShowHidePause();
+        Time.timeScale = 0.0f;
+    }   
+
+    public void ResumeGame()
+    {
+        isGamePaused = !isGamePaused;
+        UIManager.Instance.ShowHidePause(false);
+        Time.timeScale = 1.0f;
+    }
+
+    private void Update() {
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            if(isGamePaused)
+            {
+                ResumeGame();
+                return;
+            }
+            else
+            {
+                PauseGame();  
+                return;
+            }
+            
+        }
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
     }
 
 }

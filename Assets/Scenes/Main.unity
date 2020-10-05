@@ -349,6 +349,12 @@ PrefabInstance:
       propertyPath: levelToLoad
       value: 
       objectReference: {fileID: 1519468060}
+    - target: {fileID: 6620232924516347751, guid: b37d962008b8aa34ea2174edef693558,
+        type: 3}
+      propertyPath: campagneToLoad
+      value: 
+      objectReference: {fileID: 11400000, guid: 8167ec917ffb97240956187da0f2ab52,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b37d962008b8aa34ea2174edef693558, type: 3}
 --- !u!114 &415811275
@@ -387,6 +393,18 @@ MonoBehaviour:
   prefabSection: {fileID: 8633015283506958099, guid: ef0fb130ff41b8745a2b8d225ab0dbfe,
     type: 3}
   path: 
+--- !u!114 &674822839 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2445891762543243960, guid: 55c5cb88742793d48bf15637f58d8352,
+    type: 3}
+  m_PrefabInstance: {fileID: 5066026103374231817}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc10a4341c73f3d4db3d5f29e1c32ecc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &826892818
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -861,6 +879,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1865331048 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6255466529114243108, guid: 050d1efff30d0bf4cbc8cb025358e5ef,
+    type: 3}
+  m_PrefabInstance: {fileID: 3040524514168063826}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1948123507
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -977,31 +1001,31 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3330886648469232208, guid: 050d1efff30d0bf4cbc8cb025358e5ef,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 674822839}
+    - target: {fileID: 3389512702807845635, guid: 050d1efff30d0bf4cbc8cb025358e5ef,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 674822839}
+    - target: {fileID: 4145356248636316228, guid: 050d1efff30d0bf4cbc8cb025358e5ef,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 674822839}
     - target: {fileID: 4369768787317093754, guid: 050d1efff30d0bf4cbc8cb025358e5ef,
         type: 3}
       propertyPath: m_Name
       value: UI
       objectReference: {fileID: 0}
-    - target: {fileID: 5442241955859890828, guid: 050d1efff30d0bf4cbc8cb025358e5ef,
+    - target: {fileID: 7666685167650534195, guid: 050d1efff30d0bf4cbc8cb025358e5ef,
         type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6572143796294946320, guid: 050d1efff30d0bf4cbc8cb025358e5ef,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6572143796294946320, guid: 050d1efff30d0bf4cbc8cb025358e5ef,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6572143796294946320, guid: 050d1efff30d0bf4cbc8cb025358e5ef,
-        type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 674822839}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 050d1efff30d0bf4cbc8cb025358e5ef, type: 3}
 --- !u!1 &3040524514168063827 stripped
@@ -1022,6 +1046,11 @@ PrefabInstance:
       propertyPath: character
       value: 
       objectReference: {fileID: 1190154433}
+    - target: {fileID: 2445891762543243960, guid: 55c5cb88742793d48bf15637f58d8352,
+        type: 3}
+      propertyPath: isslowDown
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2820195661023504641, guid: 55c5cb88742793d48bf15637f58d8352,
         type: 3}
       propertyPath: listLevels.Array.size
@@ -1052,6 +1081,11 @@ PrefabInstance:
       propertyPath: timeline
       value: 
       objectReference: {fileID: 1834785105}
+    - target: {fileID: 5092560490011188669, guid: 55c5cb88742793d48bf15637f58d8352,
+        type: 3}
+      propertyPath: pauseMenu
+      value: 
+      objectReference: {fileID: 1865331048}
     - target: {fileID: 7413052862018617076, guid: 55c5cb88742793d48bf15637f58d8352,
         type: 3}
       propertyPath: ListPrefabObstacles.Array.data[2]

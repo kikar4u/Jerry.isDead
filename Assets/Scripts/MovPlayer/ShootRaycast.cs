@@ -35,7 +35,7 @@ public class ShootRaycast : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit))
         {
-            print(hit.transform.name + "traverse le rayon");
+            //print(hit.transform.name + "traverse le rayon");
         }
     }
 
