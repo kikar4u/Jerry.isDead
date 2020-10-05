@@ -96,8 +96,8 @@ public class TimelineHandler : MonoBehaviour
                 {
                     if(amountOfDotScrolledDown < timelineDuration)
                     {
-                        amountOfDotScrolledDown++;
                         ReadAction();
+                        amountOfDotScrolledDown++;
                     }
                 }
             }

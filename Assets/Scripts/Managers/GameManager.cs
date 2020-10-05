@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : Singleton<GameManager>
 {
+    public float rotationDuration;
     public bool isGameActive;
     public bool isSlowedDown = true;
     public GameObject currentGameObjectDragged;
@@ -16,9 +17,7 @@ public class GameManager : Singleton<GameManager>
 
     void Start()
     {
-        if(isSlowedDown)
-            Time.timeScale = 0.2f;
-
+        SpaceWheel.Instance.rotationDuration = rotationDuration;
         //SpaceWheel.Instance.Init();
 
     }
@@ -47,6 +46,7 @@ public class GameManager : Singleton<GameManager>
     {
         //Player Init()
         UIManager.Instance.Restart();
+        character.transform.position = Vector3.zero;
         Init();
     }
 
