@@ -588,7 +588,7 @@ GameObject:
   - component: {fileID: 1867234725826919441}
   - component: {fileID: 6872540250050443101}
   m_Layer: 0
-  m_Name: SectionLB1
+  m_Name: SectionLB5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -726,7 +726,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9107166090744788038}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -1778,7 +1778,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: d982af7ec1a09a24b91148e4e949dde6,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.04
+      value: -0.02
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d982af7ec1a09a24b91148e4e949dde6,
         type: 3}
@@ -1923,12 +1923,12 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: d982af7ec1a09a24b91148e4e949dde6,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.4
+      value: 3.43
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d982af7ec1a09a24b91148e4e949dde6,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.039
+      value: -0.04
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d982af7ec1a09a24b91148e4e949dde6,
         type: 3}
