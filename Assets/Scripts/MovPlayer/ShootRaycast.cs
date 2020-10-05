@@ -22,7 +22,6 @@ public class ShootRaycast : MonoBehaviour
     void Start()
     {
        _currentAmmo = m_MaxAmmo;
-        
     }
 
     
@@ -73,7 +72,7 @@ public class ShootRaycast : MonoBehaviour
     {
         _isReloading = true;
         Debug.Log("j'ai Recharge");
-
+        FMODUnity.RuntimeManager.PlayOneShot(reload, transform.position);
         yield return new WaitForSeconds(m_ReloadTime);
 
         _currentAmmo = m_MaxAmmo;
