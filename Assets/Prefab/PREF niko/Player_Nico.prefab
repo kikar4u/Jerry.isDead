@@ -312,6 +312,7 @@ MonoBehaviour:
   m_ReloadTime: 0.5
   m_MaxAmmo: 1
   shoot: 
+  reload: 
 --- !u!65 &1190154437
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -321,7 +322,7 @@ BoxCollider:
   m_GameObject: {fileID: 6067665773117347782}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1.5937119, z: 1}
   m_Center: {x: -0, y: 0.9454107, z: 0}
