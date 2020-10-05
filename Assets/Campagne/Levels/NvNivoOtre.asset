@@ -10,15 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8ec45be440612264ca23d1219ba3e21a, type: 3}
-  m_Name: NvNivo
+  m_Name: NvNivoOtre
   m_EditorClassIdentifier: 
   prefabSection: {fileID: 8633015283506958099, guid: ef0fb130ff41b8745a2b8d225ab0dbfe,
     type: 3}
   prefabLevel: {fileID: 6194017085359563017, guid: d9df2d0c5f131f14cb44c5053a8adc2a,
     type: 3}
   listSections:
-  - {fileID: 11400000, guid: c1cf235e77521294885dc5066701175c, type: 2}
   - {fileID: 11400000, guid: 3d030a1ffa2ee6147a716ec71746176f, type: 2}
+  - {fileID: 11400000, guid: c1cf235e77521294885dc5066701175c, type: 2}
+  - {fileID: 11400000, guid: 9dcb0045dac10324fa64ae9c988298f4, type: 2}
   - {fileID: 11400000, guid: 51cda104612394940adfa7e7981501a8, type: 2}
   - {fileID: 11400000, guid: 744d8f65430b0924f99c4e9256eb8712, type: 2}
   - {fileID: 11400000, guid: 4f452fc3fd87b0149946b335b8b8efb6, type: 2}
@@ -36,7 +37,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c21c5aaf5feb77c419e279db508954bb, type: 2}
   - {fileID: 11400000, guid: 4bf2fd3cc8ee6aa449166d299467ce63, type: 2}
   - {fileID: 11400000, guid: 8deb61fb4d6ce0142b1bc47cc052239a, type: 2}
-  - {fileID: 11400000, guid: 2e12654106648a343bceac4211c13506, type: 2}
-  - {fileID: 11400000, guid: b39344c64232cb6429de14609d0c69a5, type: 2}
-  sequenceDuration: 1.5
-  path: Assets/Campagne/Levels/NvNivo.asset
+  sequenceDuration: 1
+  path: Assets/Campagne/Levels/NvNivoOtre.asset

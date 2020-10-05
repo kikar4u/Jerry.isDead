@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7a02dec2c7f68b4cac2874fc57381b5, type: 3}
   m_Name: Section5
   m_EditorClassIdentifier: 
-  obstacleLeft: {fileID: 11400000, guid: e9c9b5ec332750a4199395c33671ffc2, type: 2}
+  obstacleLeft: {fileID: 0}
   obstacleCenter: {fileID: 0}
   obstacleRight: {fileID: 0}
-  prefabSection: {fileID: 8633015283506958099, guid: ef0fb130ff41b8745a2b8d225ab0dbfe,
+  prefabSection: {fileID: 8633015283506958099, guid: 1843ef3b797125747bef514b91c9f603,
     type: 3}
   path: Assets/Campagne/Sections/Section5.asset

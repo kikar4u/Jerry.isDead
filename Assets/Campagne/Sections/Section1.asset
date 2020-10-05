@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obstacleLeft: {fileID: 0}
   obstacleCenter: {fileID: 0}
-  obstacleRight: {fileID: 0}
-  prefabSection: {fileID: 8633015283506958099, guid: ef0fb130ff41b8745a2b8d225ab0dbfe,
+  obstacleRight: {fileID: 11400000, guid: e9c9b5ec332750a4199395c33671ffc2, type: 2}
+  prefabSection: {fileID: 8633015283506958099, guid: 1843ef3b797125747bef514b91c9f603,
     type: 3}
   path: Assets/Campagne/Sections/Section1.asset
