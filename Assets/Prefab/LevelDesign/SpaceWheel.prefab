@@ -282,11 +282,12 @@ MonoBehaviour:
     type: 3}
   spawnSection: {fileID: 9127303085227279424}
   pivot: {fileID: 9106349619272393702}
-  levelToLoad: {fileID: 0}
+  campagneToLoad: {fileID: 11400000, guid: ee4ccce9f82d5ec4babd3947610023f9, type: 2}
   launchOnPlay: 1
+  levelToLoad: {fileID: 0}
   nbrSectionOnLoad: 8
   nbrSectionInCircle: 27
-  rotationDuration: 1
+  rotationDuration: 0.5
   eventSequenceEnds:
     m_PersistentCalls:
       m_Calls: []
