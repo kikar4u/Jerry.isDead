@@ -8,4 +8,5 @@ public class ScriptableSection : ScriptableObject
     public ScriptableObstacle obstacleCenter;
     public ScriptableObstacle obstacleRight;
     public GameObject prefabSection;
+    public string path;
 }

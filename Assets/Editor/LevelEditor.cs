@@ -12,6 +12,8 @@ public class LevelEditor : EditorWindow
     private List<ScriptableLevel> levelsToDelet = new List<ScriptableLevel>();
     Vector2 scrollListSectionPosition = new Vector2();
 
+    private Campagne currentCampagne;
+
     [MenuItem("Window/Editeur de Nivo")]
     public static void OpenLevelEditorWindow()
     {
@@ -41,20 +43,34 @@ public class LevelEditor : EditorWindow
 
     private void OnGUI()
     {
-        DrawLevelInterface();
+        currentCampagne = (Campagne)EditorGUILayout.ObjectField("Campagne", currentCampagne, typeof(Campagne), false);
+        GUILayout.Space(20);
 
-        GUILayout.Space(5);
-
-        if(currentLevel)
+        if(currentCampagne)
         {
-            GUILayout.Label("Durée d'une séquence en second");
-            currentLevel.sequenceDuration = EditorGUILayout.FloatField(currentLevel.sequenceDuration);
+            
+            DrawLevelInterface();
 
-            GUILayout.Space(15);
+            GUILayout.Space(5);
 
-            DrawSectionInterface();
+            if(currentLevel)
+            {
+                GUILayout.Label("Durée d'une séquence en second");
+                currentLevel.sequenceDuration = EditorGUILayout.FloatField(currentLevel.sequenceDuration);
+
+                GUILayout.Space(15);
+
+                DrawSectionInterface();
+            }
         }
 
+    }
+
+    private void SaveCampagne()
+    {
+        AssetDatabase.Refresh();
+        EditorUtility.SetDirty(currentCampagne);
+        AssetDatabase.SaveAssets();
     }
 
     #region INTERFACE LEVEL
@@ -78,33 +94,64 @@ public class LevelEditor : EditorWindow
 
         if (GUILayout.Button(" + ", optionsButton))
         {
-            LevelManager.Instance.AddLevel(levelName);
+            ScriptableLevel newLevel = ScriptableLevel.CreateInstance<ScriptableLevel>();
+            newLevel.name = levelName;
+            newLevel.path = "Assets/Campagne/Levels/" + levelName + ".asset";
+
+            while (AssetDatabase.LoadAssetAtPath(newLevel.path, typeof(ScriptableLevel)))
+            {
+                newLevel.name += "Otre";
+                newLevel.path = "Assets/Campagne/Levels/" + newLevel.name + ".asset";
+
+            }
+            AssetDatabase.CreateAsset(newLevel, newLevel.path);
+            AssetDatabase.SaveAssets();
             levelName = "NvNivo";
+
+            currentCampagne.AddLevel(newLevel);
         }
     }
 
     private void DrawLevelList()
     {
-        foreach(ScriptableLevel level in LevelManager.Instance.listLevels)
+        for (int i = 0; i < currentCampagne.listLevels.Count; i++)
         {
-            DrawLevelUnit(level);
+            DrawLevelUnit(currentCampagne.listLevels[i], i);
         }
 
         foreach(ScriptableLevel level in levelsToDelet)
         {
-            LevelManager.Instance.DeletLevel(level);
+            level.RemoveAllSections();
+            currentCampagne.listLevels.Remove(level);
+            AssetDatabase.DeleteAsset(level.path);
         }
 
         levelsToDelet.Clear();
     }
 
-    private void DrawLevelUnit(ScriptableLevel levelToDraw)
+    private void DrawLevelUnit(ScriptableLevel levelToDraw, int index)
     {
         GUILayout.BeginHorizontal();
 
         GUILayout.Label(levelToDraw.name);
 
-        if(GUILayout.Button("Charger", optionsButton))
+        if (GUILayout.Button("^"))
+        {
+            if (index > 0)
+            {
+                currentCampagne.MoveDownLevel(index);
+            }
+        }
+
+        if (GUILayout.Button("ˇ"))
+        {
+            if (index < currentLevel.listSections.Count)
+            {
+                currentCampagne.MoveUpLevel(index);
+            }
+        }
+
+        if (GUILayout.Button("Charger", optionsButton))
         {
             if (currentLevel) SaveLevel(currentLevel);
             LevelManager.Instance.UnfoldLevel(levelToDraw);
@@ -165,7 +212,7 @@ public class LevelEditor : EditorWindow
         }
 
         GUILayout.BeginVertical();
-        sectionToDraw.name = GUILayout.TextField(sectionToDraw.name);
+        GUILayout.Label(sectionToDraw.name);
 
         sectionToDraw.prefabSection = (GameObject)EditorGUILayout.ObjectField("Prefab", sectionToDraw.prefabSection, typeof(GameObject), false);
         GUILayout.EndVertical();
@@ -182,7 +229,7 @@ public class LevelEditor : EditorWindow
 
         if (GUILayout.Button("ˇ", new GUILayoutOption[1] { GUILayout.Height(50) }))
         {
-            if(index < 0)
+            if(index < currentLevel.listSections.Count)
             {
                 currentLevel.MoveUpSection(index);
                 LevelManager.Instance.UnfoldLevel(currentLevel);
@@ -211,9 +258,13 @@ public class LevelEditor : EditorWindow
 
     private void SaveAllLevels()
     {
-        foreach (ScriptableLevel level in LevelManager.Instance.listLevels)
+        if(currentCampagne)
         {
-            SaveLevel(level);
+            foreach (ScriptableLevel level in currentCampagne.listLevels)
+            {
+                SaveLevel(level);
+            }
+            SaveCampagne();
         }
     }
 

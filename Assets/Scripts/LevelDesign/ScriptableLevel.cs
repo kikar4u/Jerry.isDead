@@ -11,13 +11,31 @@ public class ScriptableLevel : ScriptableObject
     [SerializeField] private GameObject prefabLevel;
     public List<ScriptableSection> listSections = new List<ScriptableSection>();
     public float sequenceDuration = 1;
+    public string path;
 
     public void AddSection()
     {
-        ScriptableSection newSection = CreateInstance<ScriptableSection>();
+        ScriptableSection newSection = ScriptableSection.CreateInstance<ScriptableSection>();
         newSection.name = "Section" + listSections.Count;
         newSection.prefabSection = prefabSection;
-        listSections.Add(newSection);
+
+#if UNITY_EDITOR
+        if (!Application.isPlaying)
+        {
+            newSection.path = "Assets/Campagne/Sections/" + newSection.name + ".asset";
+
+            while (AssetDatabase.LoadAssetAtPath(newSection.path, typeof(ScriptableSection)))
+            {
+                newSection.name += "Otre";
+                newSection.path = "Assets/Campagne/Sections/" + newSection.name + ".asset";
+            }
+
+            AssetDatabase.CreateAsset(newSection, newSection.path);
+            AssetDatabase.SaveAssets();
+        }
+#endif
+            
+            listSections.Add(newSection);
     }
 
     public void AddSection(int index)
@@ -25,6 +43,23 @@ public class ScriptableLevel : ScriptableObject
         ScriptableSection newSection = CreateInstance<ScriptableSection>();
         newSection.name = "Section" + listSections.Count;
         newSection.prefabSection = prefabSection;
+
+#if UNITY_EDITOR
+        if (!Application.isPlaying)
+        {
+            newSection.path = "Assets/Campagne/Sections/" + newSection.name + ".asset";
+
+            while (AssetDatabase.LoadAssetAtPath(newSection.path, typeof(ScriptableSection)))
+            {
+                newSection.name += "Otre";
+                newSection.path = "Assets/Campagne/Sections/" + newSection.name + ".asset";
+            }
+
+            AssetDatabase.CreateAsset(newSection, newSection.path);
+            AssetDatabase.SaveAssets();
+        }
+#endif
+
         listSections.Insert(index, newSection);
     }
 
@@ -46,32 +81,43 @@ public class ScriptableLevel : ScriptableObject
     public void MoveDownSection(int index)
     {
         ScriptableSection sectionToMove = listSections[index];
-        listSections.Remove(sectionToMove);
+        listSections.RemoveAt(index);
 
-        if (index == listSections.Count)
-        {
-            listSections.Add(sectionToMove);
-        }
-        else
-        {
-            listSections.Insert(index -1 , sectionToMove);
-        }
+            listSections.Insert(index-1, sectionToMove);
     }
 
     public void RemoveSection(int index)
     {
+#if UNITY_EDITOR
+        AssetDatabase.DeleteAsset(listSections[index].path);
+#endif
         listSections.RemoveAt(index);
+    }
+
+    public void RemoveAllSections()
+    {
+#if UNITY_EDITOR
+        foreach (ScriptableSection section in listSections)
+        {
+            AssetDatabase.DeleteAsset(section.path);
+        }
+        
+#endif
+
+        listSections.Clear();
     }
 
     public void UnfoldLevel()
     {
         GameObject newObjLevel;
-#if UNITY_EDITOR
+
         if (!Application.isPlaying)
+#if UNITY_EDITOR
             newObjLevel = (GameObject)PrefabUtility.InstantiatePrefab(prefabLevel);
 #endif
         else
         newObjLevel = Instantiate(prefabLevel);
+
         newObjLevel.name = name;
 
         Level newLevel;

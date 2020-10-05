@@ -27,13 +27,15 @@ public class SpaceWheel : MonoBehaviour
     [SerializeField] private Transform pivot;
 
     [Header("Préset Nivo")]
-    public ScriptableLevel levelToLoad;
+    public Campagne campagneToLoad;
     public bool launchOnPlay;
+    private int indexCampagne = 0;
+    [HideInInspector] public ScriptableLevel levelToLoad;
 
     private bool isLaunch;
 
     private int indexSection;
-
+    [Header("Rotation")]
     public int nbrSectionOnLoad = 8;
     public float nbrSectionInCircle = 50;
     public float rotationDuration = 1;
@@ -57,6 +59,7 @@ public class SpaceWheel : MonoBehaviour
 
     public void Init()
     {
+        levelToLoad = campagneToLoad.listLevels[indexCampagne];
         LaunchLevel();
     }
 
@@ -102,6 +105,8 @@ public class SpaceWheel : MonoBehaviour
     {
         LoadLevel();
 
+        yield return new WaitForSeconds(0.5f);
+
         for (int i = indexSection; i < levelToLoad.listSections.Count; i++)
         {
             eventSequenceBegins.Invoke();
@@ -127,7 +132,6 @@ public class SpaceWheel : MonoBehaviour
 
             yield return new WaitForSeconds(0.5f);
         }
-
     }
 
     private void RotatePivot()
