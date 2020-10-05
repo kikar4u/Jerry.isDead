@@ -34,6 +34,8 @@ public class TourelleEditor : Editor
         if(GUILayout.Button("^\n||", optionsButtonArrowUpDown))
         {
             direction = Vector3.back;
+            scriptTourelle.directionTourelle = direction;
+            SaveScriptTourelle(scriptTourelle);
         }
 
         GUILayout.BeginHorizontal();
@@ -41,10 +43,16 @@ public class TourelleEditor : Editor
         if (GUILayout.Button("<==", optionsButtonArrowRightLeft))
         {
             direction = Vector3.right;
+            tourelle.RotateHead(direction);
+            scriptTourelle.directionTourelle = direction;
+            SaveScriptTourelle(scriptTourelle);
         }
         if (GUILayout.Button("==>", optionsButtonArrowRightLeft))
         {
             direction = Vector3.left;
+            tourelle.RotateHead(direction);
+            scriptTourelle.directionTourelle = direction;
+            SaveScriptTourelle(scriptTourelle);
         }
 
         GUILayout.EndHorizontal();
@@ -52,9 +60,16 @@ public class TourelleEditor : Editor
         if (GUILayout.Button("||\nˇ",optionsButtonArrowUpDown))
         {
             direction = Vector3.forward;
+            tourelle.RotateHead(direction);
+            scriptTourelle.directionTourelle = direction;
+            SaveScriptTourelle(scriptTourelle);
         }
+    }
 
-        tourelle.RotateHead(direction);
-        scriptTourelle.directionTourelle = direction;
+    private void SaveScriptTourelle(ScriptableTourelleAuto scriptTourelle)
+    {
+        AssetDatabase.Refresh();
+        EditorUtility.SetDirty(scriptTourelle);
+        AssetDatabase.SaveAssets();
     }
 }

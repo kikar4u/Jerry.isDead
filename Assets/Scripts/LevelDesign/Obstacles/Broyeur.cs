@@ -7,7 +7,7 @@ public class Broyeur : Obstacle
     // Start is called before the first frame update
     void Start()
     {
-        
+        SpaceWheel.Instance.eventSequenceEnds.AddListener(BroyerPlayer);
     }
 
     // Update is called once per frame
@@ -19,5 +19,14 @@ public class Broyeur : Obstacle
     public override void LoadScriptobstacle()
     {
         base.LoadScriptobstacle();
+    }
+
+    private void BroyerPlayer()
+    {
+        PlayerMov player;
+        if(CheckForPlayer(out player))
+        {
+            print("/////GameOver !\\\\\\");
+        }
     }
 }

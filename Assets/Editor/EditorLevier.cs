@@ -40,6 +40,9 @@ public class EditorLevier : Editor
                     scriptLevier.scriptPorteToOpen = scriptPorte;
                     scriptPorte.scriptLevier = scriptLevier;
 
+                    levier.LoadScriptobstacle();
+                    porteSelected.LoadScriptobstacle();
+
                     AssetDatabase.Refresh();
                     EditorUtility.SetDirty(scriptPorte);
                     EditorUtility.SetDirty(scriptLevier);

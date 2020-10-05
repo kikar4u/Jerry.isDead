@@ -326,6 +326,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3935272576118704959}
   - component: {fileID: 9044495070889336552}
+  - component: {fileID: 7133947515706738464}
   m_Layer: 0
   m_Name: Levier
   m_TagString: Untagged
@@ -364,7 +365,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scriptObstacle: {fileID: 11400000, guid: e9c9b5ec332750a4199395c33671ffc2, type: 2}
+  trigger: {fileID: 7133947515706738464}
   eventLeverActivated:
     m_PersistentCalls:
       m_Calls: []
   porte: {fileID: 0}
+--- !u!65 &7133947515706738464
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6241460845675400092}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.8143104, y: 3.8391273, z: 1.9198785}
+  m_Center: {x: 0, y: 1.3555056, z: 0}

@@ -12,3 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f41ba4f8e3a67ca4da480e8c8fdd3a25, type: 3}
   m_Name: ScriptLevier
   m_EditorClassIdentifier: 
+  scriptPorteToOpen: {fileID: 11400000, guid: a917bc7dfee48414481f5c1a54a401be, type: 2}
+  levier: {fileID: 0}

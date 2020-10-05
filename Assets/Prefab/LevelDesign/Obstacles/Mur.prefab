@@ -89,6 +89,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1431210554859365971}
   - component: {fileID: 8811585853313695221}
+  - component: {fileID: 3160319470700053478}
   m_Layer: 0
   m_Name: Mur
   m_TagString: Untagged
@@ -124,3 +125,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scriptObstacle: {fileID: 11400000, guid: 173b4595e0e0f5d4696d97199074cf86, type: 2}
+  trigger: {fileID: 3160319470700053478}
+--- !u!65 &3160319470700053478
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7912909194181737857}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.1781523, y: 6.610085, z: 1.4278558}
+  m_Center: {x: 0, y: 2.8081276, z: 0}

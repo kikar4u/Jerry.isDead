@@ -100,29 +100,43 @@ public class ScriptableLevel : ScriptableObject
             {
                 if (section.obstacleLeft)
                 {
+#if UNITY_EDITOR
                     GameObject newObjObstacle = (GameObject)PrefabUtility.InstantiatePrefab(
                         ObstacleManager.Instance.GetObstacleFromScript(section.obstacleLeft).gameObject, newSection.tronconLeft.transform);
+#else
+                    GameObject newObjObstacle = Instantiate(ObstacleManager.Instance.GetObstacleFromScript(section.obstacleLeft).gameObject, newSection.tronconLeft.transform);
+#endif
                     newObjObstacle.TryGetComponent(out newSection.tronconLeft.obstacle);
 
-                    newSection.tronconLeft.obstacle.scriptObstacle = section.obstacleLeft.Copy();
+                    newSection.tronconLeft.obstacle.scriptObstacle = section.obstacleLeft;
                     newSection.tronconLeft.obstacle.LoadScriptobstacle();
                 }
                 if (section.obstacleCenter)
                 {
+#if UNITY_EDITOR
                     GameObject newObjObstacle = (GameObject)PrefabUtility.InstantiatePrefab(
                         ObstacleManager.Instance.GetObstacleFromScript(section.obstacleCenter).gameObject, newSection.tronconCenter.transform);
+#else
+                    GameObject newObjObstacle = Instantiate(ObstacleManager.Instance.GetObstacleFromScript(section.obstacleCenter).gameObject, newSection.tronconCenter.transform);
+#endif
+
                     newObjObstacle.TryGetComponent(out newSection.tronconCenter.obstacle);
 
-                    newSection.tronconCenter.obstacle.scriptObstacle = section.obstacleCenter.Copy();
+                    newSection.tronconCenter.obstacle.scriptObstacle = section.obstacleCenter;
                     newSection.tronconCenter.obstacle.LoadScriptobstacle();
                 }
                 if (section.obstacleRight)
                 {
+#if UNITY_EDITOR
                     GameObject newObjObstacle = (GameObject)PrefabUtility.InstantiatePrefab(
                         ObstacleManager.Instance.GetObstacleFromScript(section.obstacleRight).gameObject, newSection.tronconRight.transform);
+#else
+                    GameObject newObjObstacle = Instantiate(ObstacleManager.Instance.GetObstacleFromScript(section.obstacleRight).gameObject, newSection.tronconRight.transform);
+#endif
+
                     newObjObstacle.TryGetComponent(out newSection.tronconRight.obstacle);
 
-                    newSection.tronconRight.obstacle.scriptObstacle = section.obstacleRight.Copy();
+                    newSection.tronconRight.obstacle.scriptObstacle = section.obstacleRight;
                     newSection.tronconRight.obstacle.LoadScriptobstacle();
                 }
             }

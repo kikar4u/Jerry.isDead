@@ -90,8 +90,9 @@ GameObject:
   - component: {fileID: 248117021234238033}
   - component: {fileID: 927422217664390477}
   - component: {fileID: 7539577539958641932}
+  - component: {fileID: 7533441247397460112}
   m_Layer: 0
-  m_Name: Sphere
+  m_Name: Tete
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -160,6 +161,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &7533441247397460112
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1024702830828157802}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 7}
+  m_Center: {x: 0, y: 0, z: -3}
 --- !u!1 &1199623597849304098
 GameObject:
   m_ObjectHideFlags: 0
@@ -207,6 +221,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scriptObstacle: {fileID: 11400000, guid: 1cf78ca1ae19d884d8407a2a103fc1a6, type: 2}
+  trigger: {fileID: 7533441247397460112}
   teteTourelle: {fileID: 1024702830828157802}
 --- !u!1 &3894829535156178395
 GameObject:

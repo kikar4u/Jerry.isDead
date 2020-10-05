@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9213161685422645191}
   - component: {fileID: 592695573288729843}
+  - component: {fileID: 7110018446739035034}
   m_Layer: 0
   m_Name: Porte
   m_TagString: Untagged
@@ -48,7 +49,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scriptObstacle: {fileID: 11400000, guid: a917bc7dfee48414481f5c1a54a401be, type: 2}
+  trigger: {fileID: 7110018446739035034}
   levier: {fileID: 0}
+--- !u!65 &7110018446739035034
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5224989906604220941}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.1212635, y: 5.318564, z: 1.1640121}
+  m_Center: {x: 0, y: 1.8496339, z: 0}
 --- !u!1 &5942758160028635837
 GameObject:
   m_ObjectHideFlags: 0

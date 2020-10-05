@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 260857803aefda64ab613cea2c663c84, type: 3}
   m_Name: ScriptTourelle
   m_EditorClassIdentifier: 
+  directionTourelle: {x: 1, y: 0, z: 0}
