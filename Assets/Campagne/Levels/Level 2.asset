@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ec45be440612264ca23d1219ba3e21a, type: 3}
+  m_Name: Level 2
+  m_EditorClassIdentifier: 
+  prefabSection: {fileID: 8633015283506958099, guid: ef0fb130ff41b8745a2b8d225ab0dbfe,
+    type: 3}
+  prefabLevel: {fileID: 6194017085359563017, guid: d9df2d0c5f131f14cb44c5053a8adc2a,
+    type: 3}
+  listSections:
+  - {fileID: 11400000, guid: 8a4a66a9f51db81419014d031a074049, type: 2}
+  - {fileID: 11400000, guid: 89b555aad5ac3644c82dc3a9b0679540, type: 2}
+  - {fileID: 11400000, guid: 849f9d09b794d7242b548cc1e746ac49, type: 2}
+  - {fileID: 11400000, guid: 02e6c4ce65181aa4ea0da1b55af0c79c, type: 2}
+  - {fileID: 11400000, guid: b58e386fdd9eb39478817f0871af1fa3, type: 2}
+  - {fileID: 11400000, guid: d3456461853698f4f9acb2e02698c780, type: 2}
+  - {fileID: 11400000, guid: eb420daffa5e58d4e87e584af33e01dc, type: 2}
+  - {fileID: 11400000, guid: b89ab4fb0ca3aac48a857db2f4158ae5, type: 2}
+  - {fileID: 11400000, guid: d571410b9268da94497effa4742e1dac, type: 2}
+  - {fileID: 11400000, guid: 3b18ee59d149ac54fb1cc1a4d494fc86, type: 2}
+  - {fileID: 11400000, guid: a42c52e85ab77174e94010000a6f844b, type: 2}
+  - {fileID: 11400000, guid: bccaaf3940450634981633b673c69252, type: 2}
+  - {fileID: 11400000, guid: 946e9f0d028dd1341a43dfef30892555, type: 2}
+  - {fileID: 11400000, guid: 536fa5d3835c333469e6bb52f3f2be19, type: 2}
+  - {fileID: 11400000, guid: 30f527e4824da2542874838029a4db49, type: 2}
+  - {fileID: 11400000, guid: 75e9468be85a76b4bb81fac00c0a64a2, type: 2}
+  - {fileID: 11400000, guid: 6cd5bcf72623d014984aa53a51618004, type: 2}
+  - {fileID: 11400000, guid: 9917dbd1d97aa83419edcaf1a6629376, type: 2}
+  - {fileID: 11400000, guid: 2e12654106648a343bceac4211c13506, type: 2}
+  - {fileID: 11400000, guid: a64f174211abf114f9b0437d12b679f3, type: 2}
+  sequenceDuration: 1
+  path: Assets/Campagne/Levels/Level 2.asset
