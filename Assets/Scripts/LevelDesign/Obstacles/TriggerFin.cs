@@ -21,7 +21,7 @@ public class TriggerFin : Obstacle
         PlayerMov player;
         if(CheckForPlayer(out player))
         {
-            GameManager.Instance.GameWin();
+            print("///// ET C'EST LE WIN!!!!! \\\\\\");
         }
     }
 

@@ -26,7 +26,7 @@ public class Broyeur : Obstacle
         PlayerMov player;
         if(CheckForPlayer(out player))
         {
-            GameManager.Instance.GameOver();
+            print("/////GameOver !\\\\\\");
         }
     }
 }
