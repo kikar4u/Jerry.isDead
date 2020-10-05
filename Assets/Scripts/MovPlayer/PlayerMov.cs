@@ -21,6 +21,8 @@ public class PlayerMov : MonoBehaviour
         m_Col = GetComponentInChildren<CapsuleCollider>();
     }
 
+    
+
     public void MovePlayer(InventaireHandler.AlgoActionEnum direction)
     {
         Debug.Log("Move Player");
@@ -38,14 +40,22 @@ public class PlayerMov : MonoBehaviour
         }
     }
 
-    public void Jump ()
+    public void Jump()
     {
-        if(IsGrounded())
-        {
-            m_Rb.AddForce(Vector3.up * m_JumpForce, ForceMode.Impulse);
-            Debug.Log("Go Jump plz");
-        }
+       float i =  SpaceWheel.Instance.levelToLoad.sequenceDuration * 2;
+       transform.DOJump(_targetPosition, m_JumpForce, 1, i);
     }
+
+ 
+
+    //public void Jump ()
+    //{
+    //    if(IsGrounded())
+    //    {
+    //        m_Rb.AddForce(Vector3.up * m_JumpForce, ForceMode.Impulse);
+    //        Debug.Log("Go Jump plz");
+    //    }
+    //}
 
     private bool IsGrounded()
     {
@@ -59,6 +69,8 @@ public class PlayerMov : MonoBehaviour
     private Vector3 _targetPosition;
     private Rigidbody m_Rb;
     private CapsuleCollider m_Col;
+    
+   
     #endregion
 
 

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GameManager : Singleton<GameManager>
 {
+    public bool isslowDown = true;
     public GameObject currentGameObjectDragged;
     [HideInInspector] public int levelChucks;
 
@@ -11,7 +12,8 @@ public class GameManager : Singleton<GameManager>
 
     void Start()
     {
-        //Time.timeScale = 0.2f;
+        if(isslowDown)
+        Time.timeScale = 0.2f;
         Init();
     }
 
