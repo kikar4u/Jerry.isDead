@@ -32,7 +32,7 @@ public class Porte : Obstacle
             PlayerMov player;
             if (CheckForPlayer(out player))
             {
-                print("/////GameOver !\\\\\\");
+                GameManager.Instance.GameOver();
             }
         }
     }

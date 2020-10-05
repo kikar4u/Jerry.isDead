@@ -1,8 +1,12 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Campagne/Levels/NvNivo.asset.meta
 guid: c8bcb54e7f76a9d43b9dca004d15c43a
 NativeFormatImporter:
+=======
+guid: 82a1fc675b4687347b4d6d780d3a1e15
+DefaultImporter:
+>>>>>>> Victoire-Defait:Assets/Scenes/MainLeo.unity.meta
   externalObjects: {}
-  mainObjectFileID: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

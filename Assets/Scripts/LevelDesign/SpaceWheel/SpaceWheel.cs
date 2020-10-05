@@ -29,8 +29,9 @@ public class SpaceWheel : MonoBehaviour
     [Header("Préset Nivo")]
     public Campagne campagneToLoad;
     public bool launchOnPlay;
-    private int indexCampagne = 0;
+    public int indexCampagne = 0;
     [HideInInspector] public ScriptableLevel levelToLoad;
+
 
     private bool isLaunch;
 
@@ -39,6 +40,7 @@ public class SpaceWheel : MonoBehaviour
     public int nbrSectionOnLoad = 8;
     public float nbrSectionInCircle = 50;
     public float rotationDuration = 1;
+    [HideInInspector] public bool breakRotation = false;
 
     private bool isRotating = false;
 
@@ -59,7 +61,10 @@ public class SpaceWheel : MonoBehaviour
 
     public void Init()
     {
+        ClearNivo();
+        isRotating = false;
         levelToLoad = campagneToLoad.listLevels[indexCampagne];
+        indexSection = 0;
         LaunchLevel();
     }
 
@@ -117,10 +122,15 @@ public class SpaceWheel : MonoBehaviour
 
             eventSequenceEnds.Invoke();
 
+            if (breakRotation)
+            {
+                break;
+            }
+
             yield return new WaitForSeconds(0.5f);
         }
 
-        for (int i = 0; i < nbrSectionOnLoad - 2; i++)
+        for (int i = 0; i < nbrSectionOnLoad - 1; i++)
         {
             eventSequenceBegins.Invoke();
 
@@ -129,6 +139,11 @@ public class SpaceWheel : MonoBehaviour
             yield return new WaitWhile(() => isRotating);
 
             eventSequenceEnds.Invoke();
+
+            if (breakRotation)
+            {
+                break;
+            }
 
             yield return new WaitForSeconds(0.5f);
         }
@@ -149,5 +164,16 @@ public class SpaceWheel : MonoBehaviour
         targetRotation.z -= 360 / nbrSectionInCircle;
         isRotating = true;
         pivot.DORotate(targetRotation, duration).OnComplete(() => isRotating = false);
+    }
+
+
+    private void ClearNivo()
+    {
+        Section[] sectionsToDelet = pivot.GetComponentsInChildren<Section>();
+
+        foreach (Section section in sectionsToDelet)
+        {
+            Destroy(section.gameObject);
+        }
     }
 }
