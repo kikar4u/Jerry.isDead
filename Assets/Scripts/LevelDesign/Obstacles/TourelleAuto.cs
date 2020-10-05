@@ -25,7 +25,7 @@ public class TourelleAuto : Obstacle
         PlayerMov player;
         if (CheckForPlayer(out player))
         {
-            FMODUnity.RuntimeManager.PlayOneShot(sonTireTourelle, transform.position);
+            //FMODUnity.RuntimeManager.PlayOneShot(sonTireTourelle, transform.position);
             GameManager.Instance.GameOver();
         }
     }
