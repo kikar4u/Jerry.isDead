@@ -57,3 +57,17 @@ sysinfo.txt
 
 # Crashlytics generated file
 crashlytics-build.properties
+
+Assets/Editor Default Resources.meta
+
+Assets/Editor Default Resources/FMOD.meta
+
+Assets/Gizmos.meta
+
+Assets/Gizmos/
+
+Assets/Plugins.meta
+
+Assets/Plugins/
+
+Assets/StreamingAssets.meta
