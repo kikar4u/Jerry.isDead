@@ -26,13 +26,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6067665772021382655}
-  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 0.00008180253, y: -0.00337, z: 0.01106}
-  m_LocalScale: {x: 0.0045595868, y: 0.00228011, z: 0.0063120085}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.0114, y: 0.5801, z: 0.1444}
+  m_LocalScale: {x: 0.635424, y: 0.31775606, z: 0.8796413}
   m_Children:
   - {fileID: 6067665772066220004}
-  m_Father: {fileID: 3357765295941778772}
-  m_RootOrder: 5
+  m_Father: {fileID: 6067665772658429859}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6067665772021382643
 MeshFilter:
@@ -117,8 +117,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6067665772066220005}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.51799935}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.518}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6067665772021382654}
@@ -152,7 +152,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 6067665772021382654}
   m_Father: {fileID: 6067665773117347801}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
@@ -235,7 +236,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6067665772658429859}
-  - {fileID: 3357765295941778772}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -283,8 +283,6 @@ MonoBehaviour:
   m_LifeTime: 3
   m_ReloadTime: 0.5
   m_MaxAmmo: 1
-  shoot: 
-  reload: 
 --- !u!65 &1190154437
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -294,7 +292,7 @@ BoxCollider:
   m_GameObject: {fileID: 6067665773117347782}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1.5937119, z: 1}
   m_Center: {x: -0, y: 0.9454107, z: 0}
