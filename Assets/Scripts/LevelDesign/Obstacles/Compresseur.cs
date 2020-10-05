@@ -22,7 +22,7 @@ public class Compresseur : Obstacle
         PlayerMov player;
         if (CheckForPlayer(out player))
         {
-            print("/////GameOver !\\\\\\");
+            GameManager.Instance.GameOver();
         }
     }
 }
