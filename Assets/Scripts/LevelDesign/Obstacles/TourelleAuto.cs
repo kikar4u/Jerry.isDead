@@ -46,4 +46,9 @@ public class TourelleAuto : Obstacle
         
         Debug.DrawLine(teteTourelle.transform.position, direction + teteTourelle.transform.position, new Color(200, 0, 0),20);
     }
+
+    public void DestroyTourelle()
+    {
+        Destroy(gameObject);
+    }
 }

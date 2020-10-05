@@ -39,7 +39,7 @@ public class SpaceWheel : MonoBehaviour
     [Header("Rotation")]
     public int nbrSectionOnLoad = 8;
     public float nbrSectionInCircle = 50;
-    public float rotationDuration = 1;
+    [HideInInspector]public float rotationDuration = 1;
     [HideInInspector] public bool breakRotation = false;
 
     private bool isRotating = false;
@@ -61,6 +61,7 @@ public class SpaceWheel : MonoBehaviour
 
     public void Init()
     {
+        print("Nivo Lancé");
         breakRotation = false;
         ClearNivo();
         isRotating = false;
