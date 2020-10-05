@@ -69,8 +69,6 @@ public class PlayerMov : MonoBehaviour
     private Vector3 _targetPosition;
     private Rigidbody m_Rb;
     private CapsuleCollider m_Col;
-    
-   
     #endregion
 
 

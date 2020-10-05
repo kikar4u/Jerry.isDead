@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class ShootRaycast : MonoBehaviour
 {
@@ -76,12 +77,27 @@ public class ShootRaycast : MonoBehaviour
     {
         Vector3 dir = Vector3.forward;
         if(direction == InventaireHandler.AlgoActionEnum.Left)
+        {
             dir = Vector3.left;
+            GetComponentInChildren<Rigidbody>().DORotate(new Vector3(0f,90f - 45f,0f), 0.5f).OnComplete(() =>
+            {
+                GetComponentInChildren<Rigidbody>().DORotate(new Vector3(0f, 90f, 0f), 0.5f);
+            });
+        }
+            
         if(direction == InventaireHandler.AlgoActionEnum.Right)
+        {
             dir = Vector3.right;
+            GetComponentInChildren<Rigidbody>().DORotate(new Vector3(0f, 90f + 45f, 0f), 0.5f).OnComplete(() =>
+            {
+                GetComponentInChildren<Rigidbody>().DORotate(new Vector3(0f, 90f, 0f), 0.5f);
+            });
+        }
+            
         if(direction == InventaireHandler.AlgoActionEnum.Up)
-            dir = Vector3.forward;
-
+           dir = Vector3.forward;
+        
+        
         GameObject bullet = Instantiate(m_BulletPref);
         Physics.IgnoreCollision(bullet.GetComponent<Collider>(), m_BulletSpawn.parent.parent.GetComponent<Collider>());
 
@@ -90,9 +106,10 @@ public class ShootRaycast : MonoBehaviour
 
         bullet.transform.rotation = Quaternion.Euler(rotation.x, transform.eulerAngles.y, rotation.z);
 
-        bullet.GetComponent<Rigidbody>().AddForce(dir * m_BulletSpeed , ForceMode.Impulse);
+        bullet.GetComponent<Rigidbody>().AddForce(dir * m_BulletSpeed * Time.deltaTime , ForceMode.Impulse);
 
         StartCoroutine(DestroyBulleAfterTime(bullet, m_LifeTime));
+        
 
     }
 
@@ -106,5 +123,6 @@ public class ShootRaycast : MonoBehaviour
     #region Private Members
     private int _currentAmmo;
     private bool _isReloading = false;
+    
     #endregion
 }
