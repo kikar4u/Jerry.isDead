@@ -8,6 +8,8 @@ public class UIManager : Singleton<UIManager>
 
     public GameObject timeline;
 
+    public GameObject pauseMenu;
+
 
     public void Init()
     {
@@ -25,5 +27,10 @@ public class UIManager : Singleton<UIManager>
     {
         if(boo) timeline.GetComponent<TimelineHandler>().Open();
         else timeline.GetComponent<TimelineHandler>().Close();
+    }
+
+    public void ShowHidePause(bool boo = true)
+    {
+        pauseMenu.SetActive(boo);
     }
 }
