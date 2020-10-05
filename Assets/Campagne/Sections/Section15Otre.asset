@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c7a02dec2c7f68b4cac2874fc57381b5, type: 3}
-  m_Name: Section20
+  m_Name: Section15Otre
   m_EditorClassIdentifier: 
-  obstacleLeft: {fileID: 0}
+  obstacleLeft: {fileID: 11400000, guid: f48c289922135274990e321c0f128575, type: 2}
   obstacleCenter: {fileID: 0}
-  obstacleRight: {fileID: 0}
+  obstacleRight: {fileID: 11400000, guid: 1cf78ca1ae19d884d8407a2a103fc1a6, type: 2}
   prefabSection: {fileID: 8633015283506958099, guid: ef0fb130ff41b8745a2b8d225ab0dbfe,
     type: 3}
-  path: Assets/Campagne/Sections/Section20.asset
+  path: Assets/Campagne/Sections/Section15Otre.asset

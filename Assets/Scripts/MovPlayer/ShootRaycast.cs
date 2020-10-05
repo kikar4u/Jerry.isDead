@@ -81,6 +81,7 @@ public class ShootRaycast : MonoBehaviour
             dir = Vector3.left;
             GetComponentInChildren<Rigidbody>().DORotate(new Vector3(0f,90f - 45f,0f), 0.5f).OnComplete(() =>
             {
+                SpwonBullet(Bullet.directionBullet.left);
                 GetComponentInChildren<Rigidbody>().DORotate(new Vector3(0f, 90f, 0f), 0.5f);
             });
         }
@@ -90,35 +91,29 @@ public class ShootRaycast : MonoBehaviour
             dir = Vector3.right;
             GetComponentInChildren<Rigidbody>().DORotate(new Vector3(0f, 90f + 45f, 0f), 0.5f).OnComplete(() =>
             {
+                SpwonBullet(Bullet.directionBullet.right);
                 GetComponentInChildren<Rigidbody>().DORotate(new Vector3(0f, 90f, 0f), 0.5f);
             });
         }
             
         if(direction == InventaireHandler.AlgoActionEnum.Up)
+        {
            dir = Vector3.forward;
-        
-        
+           SpwonBullet(Bullet.directionBullet.center);
+
+        }
+    }
+
+    void SpwonBullet(Bullet.directionBullet direction)
+    {
         GameObject bullet = Instantiate(m_BulletPref);
         Physics.IgnoreCollision(bullet.GetComponent<Collider>(), m_BulletSpawn.parent.parent.GetComponent<Collider>());
 
         bullet.transform.position = m_BulletSpawn.position;
-        Vector3 rotation = bullet.transform.rotation.eulerAngles;
-
-        bullet.transform.rotation = Quaternion.Euler(rotation.x, transform.eulerAngles.y, rotation.z);
-
-        bullet.GetComponent<Rigidbody>().AddForce(dir * m_BulletSpeed * Time.deltaTime , ForceMode.Impulse);
-
-        StartCoroutine(DestroyBulleAfterTime(bullet, m_LifeTime));
-        
-
+        bullet?.GetComponent<Bullet>().Fire(direction);
     }
 
-    private IEnumerator DestroyBulleAfterTime(GameObject bullet, float delay)
-    {
-        yield return new WaitForSeconds(delay);
-
-        Destroy(bullet);
-    }
+   
 
     #region Private Members
     private int _currentAmmo;
