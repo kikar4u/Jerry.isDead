@@ -14,11 +14,11 @@ public class ShootRaycast : MonoBehaviour
     public int m_MaxAmmo = 10;
     #endregion
 
-    
+    public string shoot = "";
+    public string reload = "";
     void Start()
     {
        _currentAmmo = m_MaxAmmo;
-        
     }
 
     
@@ -56,7 +56,7 @@ public class ShootRaycast : MonoBehaviour
     {
         _isReloading = true;
         Debug.Log("j'ai Recharge");
-
+        FMODUnity.RuntimeManager.PlayOneShot(reload, transform.position);
         yield return new WaitForSeconds(m_ReloadTime);
 
         _currentAmmo = m_MaxAmmo;
@@ -75,6 +75,7 @@ public class ShootRaycast : MonoBehaviour
 
     private void Fire(InventaireHandler.AlgoActionEnum direction)
     {
+        FMODUnity.RuntimeManager.PlayOneShot(shoot, transform.position);
         Vector3 dir = Vector3.forward;
         if(direction == InventaireHandler.AlgoActionEnum.Left)
         {

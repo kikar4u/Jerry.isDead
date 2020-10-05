@@ -13,29 +13,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.010117415, y: 0.06870163, z: 0.009218438}
   m_Center: {x: -0.00013246597, y: -0.02929255, z: 0.013354387}
---- !u!114 &8926661773130555768
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 905446985937688908}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  Event: event:/Soundesign/Piege/Tourelle_Tire
-  PlayEvent: 1
-  StopEvent: 2
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
 --- !u!114 &7504020668956648484
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -104,8 +81,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scriptObstacle: {fileID: 11400000, guid: 1cf78ca1ae19d884d8407a2a103fc1a6, type: 2}
-  trigger: {fileID: 0}
-  teteTourelle: {fileID: 0}
+  trigger: {fileID: 1512540995412134405}
+  teteTourelle: {fileID: 1982850309022562627}
+  sonTireTourelle: tourelle_tire
 --- !u!1001 &22978613578998813
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -184,6 +162,12 @@ GameObject:
 --- !u!4 &566076483948495862 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 95d911cd8af86524aa279ba4eb00372c,
+    type: 3}
+  m_PrefabInstance: {fileID: 22978613578998813}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1982850309022562627 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2005752428160261470, guid: 95d911cd8af86524aa279ba4eb00372c,
     type: 3}
   m_PrefabInstance: {fileID: 22978613578998813}
   m_PrefabAsset: {fileID: 0}
