@@ -23,7 +23,7 @@ public class TourelleAuto : Obstacle
         PlayerMov player;
         if (CheckForPlayer(out player))
         {
-            print("/////GameOver !\\\\\\");
+            GameManager.Instance.GameOver();
         }
     }
 
