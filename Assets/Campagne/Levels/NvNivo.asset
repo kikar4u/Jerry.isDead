@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ec45be440612264ca23d1219ba3e21a, type: 3}
+  m_Name: NvNivo
+  m_EditorClassIdentifier: 
+  prefabSection: {fileID: 8633015283506958099, guid: ef0fb130ff41b8745a2b8d225ab0dbfe,
+    type: 3}
+  prefabLevel: {fileID: 6194017085359563017, guid: d9df2d0c5f131f14cb44c5053a8adc2a,
+    type: 3}
+  listSections:
+  - {fileID: 11400000, guid: c1cf235e77521294885dc5066701175c, type: 2}
+  - {fileID: 11400000, guid: 3d030a1ffa2ee6147a716ec71746176f, type: 2}
+  - {fileID: 11400000, guid: 51cda104612394940adfa7e7981501a8, type: 2}
+  - {fileID: 11400000, guid: 744d8f65430b0924f99c4e9256eb8712, type: 2}
+  - {fileID: 11400000, guid: 4f452fc3fd87b0149946b335b8b8efb6, type: 2}
+  - {fileID: 11400000, guid: a609c4626a0754440bae37939eb8c626, type: 2}
+  - {fileID: 11400000, guid: 94fd6a0e8a6c11b4bb73208687f68c4d, type: 2}
+  - {fileID: 11400000, guid: 64b55003b2df00b4db3a10e7bbe67b48, type: 2}
+  - {fileID: 11400000, guid: 78de4eb634af1da45b75a81c61ba00ba, type: 2}
+  - {fileID: 11400000, guid: 3f30d1c10aa3bc5438d680675caa3afc, type: 2}
+  - {fileID: 11400000, guid: 62f5a3624d3b6e04aa65db06f0c24c22, type: 2}
+  - {fileID: 11400000, guid: d2cb0c8eed3466f4bb73ccd755cdfe6c, type: 2}
+  - {fileID: 11400000, guid: 328ae3001e91f674e90943e193cdb1bd, type: 2}
+  - {fileID: 11400000, guid: 488a29aa771af004291f7e1e8a26a7b3, type: 2}
+  - {fileID: 11400000, guid: 45e2cf9733108b642949cc2a3cc0b029, type: 2}
+  - {fileID: 11400000, guid: 87b93cfe1dc2f7044a35e5cd95677e9e, type: 2}
+  - {fileID: 11400000, guid: c21c5aaf5feb77c419e279db508954bb, type: 2}
+  - {fileID: 11400000, guid: 4bf2fd3cc8ee6aa449166d299467ce63, type: 2}
+  - {fileID: 11400000, guid: 8deb61fb4d6ce0142b1bc47cc052239a, type: 2}
+  - {fileID: 11400000, guid: 2e12654106648a343bceac4211c13506, type: 2}
+  - {fileID: 11400000, guid: b39344c64232cb6429de14609d0c69a5, type: 2}
+  sequenceDuration: 1.5
+  path: Assets/Campagne/Levels/NvNivo.asset

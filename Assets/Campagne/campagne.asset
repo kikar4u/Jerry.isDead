@@ -10,8 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3729151d0ad7d434696eb46aeef4b6e6, type: 3}
-  m_Name: NewCampagne
+  m_Name: campagne
   m_EditorClassIdentifier: 
   listLevels:
-  - {fileID: 11400000, guid: a2691e7f7ba7210448553ca857e63aef, type: 2}
-  - {fileID: 11400000, guid: 7509b031c7311aa439f0d76274b16b09, type: 2}
+  - {fileID: 11400000, guid: c8bcb54e7f76a9d43b9dca004d15c43a, type: 2}
