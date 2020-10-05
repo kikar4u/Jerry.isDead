@@ -115,6 +115,19 @@ public class SpaceWheel : MonoBehaviour
             yield return new WaitForSeconds(0.5f);
         }
 
+        for (int i = 0; i < nbrSectionOnLoad - 2; i++)
+        {
+            eventSequenceBegins.Invoke();
+
+            RotatePivot(rotationDuration);
+
+            yield return new WaitWhile(() => isRotating);
+
+            eventSequenceEnds.Invoke();
+
+            yield return new WaitForSeconds(0.5f);
+        }
+
     }
 
     private void RotatePivot()
