@@ -13,6 +13,8 @@ public class Bullet : MonoBehaviour
         }
     }
 
+    public enum directionBullet {left, center, right}
+
     private Troncon nextDirection;
     [SerializeField] private int rangeInSection;
     [Tooltip("secondes nécessaire pour atteindre la prochaine section")]
@@ -35,5 +37,8 @@ public class Bullet : MonoBehaviour
         return null;
     }
 
+    public void Fire(directionBullet direction)
+    {
 
+    }
 }
