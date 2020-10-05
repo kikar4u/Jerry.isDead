@@ -109,15 +109,21 @@ public class ScriptableLevel : ScriptableObject
 
     public void UnfoldLevel()
     {
-        GameObject newObjLevel;
+        GameObject newObjLevel = null;
 
         if (!Application.isPlaying)
+        {
 #if UNITY_EDITOR
             newObjLevel = (GameObject)PrefabUtility.InstantiatePrefab(prefabLevel);
 #endif
-        else
-        newObjLevel = Instantiate(prefabLevel);
+        }
 
+        else
+        {
+
+        
+        newObjLevel = Instantiate(prefabLevel);
+        }
         newObjLevel.name = name;
 
         Level newLevel;
@@ -128,15 +134,22 @@ public class ScriptableLevel : ScriptableObject
 
         foreach (ScriptableSection section in listSections)
         {
-            if (section.prefabSection == null) section.prefabSection = prefabSection;
+            if (section.prefabSection == null) { section.prefabSection = prefabSection; }
 
-            GameObject newObjSection;
+            GameObject newObjSection = null;
+            if (!Application.isPlaying)
+            {
 #if UNITY_EDITOR
-            if(!Application.isPlaying)
+
                 newObjSection = (GameObject)PrefabUtility.InstantiatePrefab(section.prefabSection, newLevel.transform);
-    #endif
-            else
+
+
+#endif
+            }
+            else {
                 newObjSection = Instantiate(section.prefabSection, newLevel.transform);
+            }
+                
 
             Section newSection;
             newObjSection.TryGetComponent(out newSection);
