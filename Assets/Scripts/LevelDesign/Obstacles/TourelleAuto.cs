@@ -5,8 +5,6 @@ using UnityEngine;
 public class TourelleAuto : Obstacle
 {
     public GameObject teteTourelle;
-    public string sonTireTourelle = "";
-    public 
 
     // Start is called before the first frame update
     void Start()
