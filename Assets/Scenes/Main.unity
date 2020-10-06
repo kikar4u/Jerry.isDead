@@ -1242,6 +1242,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Levier
       objectReference: {fileID: 0}
+    - target: {fileID: 9044495070889336552, guid: a2f9843100fd5134a8f0d6b284390d76,
+        type: 3}
+      propertyPath: porte
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2f9843100fd5134a8f0d6b284390d76, type: 3}
 --- !u!1001 &573479132
