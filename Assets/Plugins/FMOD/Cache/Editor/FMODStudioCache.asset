@@ -1,0 +1,795 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8940367873832937554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Soundesign/UI_GD/BA_Tirer
+  m_EditorClassIdentifier: 
+  Path: event:/Soundesign/UI_GD/BA_Tirer
+  guid: 6e67809de12f4c4aba6a2dfbbd6e6330
+  Banks:
+  - {fileID: 6816929582204008035}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 7000
+--- !u!114 &-8174930451878212601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Soundesign/Piege/Tourelle_Tire
+  m_EditorClassIdentifier: 
+  Path: event:/Soundesign/Piege/Tourelle_Tire
+  guid: 4f18588f8fc973498d447e0c7d1b5452
+  Banks:
+  - {fileID: 6816929582204008035}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 10000
+--- !u!114 &-7968484377359755757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Soundesign/UI_UX/Reussite_du_niveau
+  m_EditorClassIdentifier: 
+  Path: event:/Soundesign/UI_UX/Reussite_du_niveau
+  guid: 13ce45f2817f8b45902edb090a8a8af0
+  Banks:
+  - {fileID: 6816929582204008035}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 16000
+--- !u!114 &-7831356679856588123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: ../FMOD_LD47/FMOD_LD_47/Build/Desktop/Master.strings.bank
+  SubDir: 
+  lastModified: 637375342914240748
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 2564
+  Exists: 1
+--- !u!114 &-7274214192729012559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Soundesign/Piege/Broyeur_loop
+  m_EditorClassIdentifier: 
+  Path: event:/Soundesign/Piege/Broyeur_loop
+  guid: 456cc3bc253b7442ab7fa9a9ecf8dd0e
+  Banks:
+  - {fileID: 6816929582204008035}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 4.2000003
+  Length: 6000
+--- !u!114 &-6160467186698184745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Soundesign/Decor/Ambiance_Ventilation
+  m_EditorClassIdentifier: 
+  Path: event:/Soundesign/Decor/Ambiance_Ventilation
+  guid: d50f065d303c234eb908fbd0d3633e15
+  Banks:
+  - {fileID: 6816929582204008035}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 192000
+--- !u!114 &-5744148278848150709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Soundesign/UI_GD/BD_Haut
+  m_EditorClassIdentifier: 
+  Path: event:/Soundesign/UI_GD/BD_Haut
+  guid: 9f6471141f67564e8976c29b5557f111
+  Banks:
+  - {fileID: 6816929582204008035}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 3989
+--- !u!114 &-4651721895010238587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Soundesign/Robot/Robot_Tire
+  m_EditorClassIdentifier: 
+  Path: event:/Soundesign/Robot/Robot_Tire
+  guid: 8decd9e8bca78b418280d7c79dbf91ad
+  Banks:
+  - {fileID: 6816929582204008035}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4000
+--- !u!114 &-3485477849232032064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Soundesign/UI_GD/BD_Gauche
+  m_EditorClassIdentifier: 
+  Path: event:/Soundesign/UI_GD/BD_Gauche
+  guid: 1af2860bdd52e74089a3b7ee031cd8f6
+  Banks:
+  - {fileID: 6816929582204008035}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 3989
+--- !u!114 &-3116669698786613085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Soundesign/Robot/Deplacement_Gauche
+  m_EditorClassIdentifier: 
+  Path: event:/Soundesign/Robot/Deplacement_Gauche
+  guid: 760c9671c1f195478fea74aa0481539d
+  Banks:
+  - {fileID: 6816929582204008035}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3989
+--- !u!114 &-2799655245546191530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Soundesign/UI_GD/BA_Recharger
+  m_EditorClassIdentifier: 
+  Path: event:/Soundesign/UI_GD/BA_Recharger
+  guid: a95ec37f5b7bcb4dbe14cf7735176324
+  Banks:
+  - {fileID: 6816929582204008035}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 7000
+--- !u!114 &-1823545143319133344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Soundesign/Robot/Deplacement
+  m_EditorClassIdentifier: 
+  Path: event:/Soundesign/Robot/Deplacement
+  guid: 14353460a6ac8d409cd4998328397665
+  Banks:
+  - {fileID: 6816929582204008035}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 10000
+--- !u!114 &-1811639517459471496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music_Level/Nombre de bloc restant
+  m_EditorClassIdentifier: 
+  Name: Nombre de bloc restant
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
+--- !u!114 &-1360715266559270094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Soundesign/Decor/Neon
+  m_EditorClassIdentifier: 
+  Path: event:/Soundesign/Decor/Neon
+  guid: 35d08ec44d6f684ea7f905e130d7bc75
+  Banks:
+  - {fileID: 6816929582204008035}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 32000
+--- !u!114 &-934202626527293897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Soundesign/Robot/Reload
+  m_EditorClassIdentifier: 
+  Path: event:/Soundesign/Robot/Reload
+  guid: 125b531baa03b44188b2e01dfc3626fe
+  Banks:
+  - {fileID: 6816929582204008035}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4000
+--- !u!114 &-194282143906739592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Soundesign/Robot/Robot_Reaction
+  m_EditorClassIdentifier: 
+  Path: event:/Soundesign/Robot/Robot_Reaction
+  guid: 2754d74705c42b4388c70a26f10bd9c2
+  Banks:
+  - {fileID: 6816929582204008035}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2754
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
+  m_Name: FMODStudioCache
+  m_EditorClassIdentifier: 
+  EditorBanks:
+  - {fileID: -7831356679856588123}
+  - {fileID: 6816929582204008035}
+  EditorEvents:
+  - {fileID: 730599247228958592}
+  - {fileID: -934202626527293897}
+  - {fileID: -7968484377359755757}
+  - {fileID: -1823545143319133344}
+  - {fileID: 5426483699878893243}
+  - {fileID: -3485477849232032064}
+  - {fileID: 1778604534649371363}
+  - {fileID: 9198853776402708032}
+  - {fileID: -194282143906739592}
+  - {fileID: 5292807878195699731}
+  - {fileID: -1360715266559270094}
+  - {fileID: -7274214192729012559}
+  - {fileID: 5140250926397367260}
+  - {fileID: -8174930451878212601}
+  - {fileID: 105500710922333403}
+  - {fileID: 2440950848859700466}
+  - {fileID: 8869741069713922369}
+  - {fileID: -8940367873832937554}
+  - {fileID: 7366760050388838121}
+  - {fileID: -3116669698786613085}
+  - {fileID: 7611226891428054072}
+  - {fileID: 4042291707066843011}
+  - {fileID: -4651721895010238587}
+  - {fileID: -5744148278848150709}
+  - {fileID: -2799655245546191530}
+  - {fileID: 6048977184338414326}
+  - {fileID: 7138123403377128536}
+  - {fileID: -6160467186698184745}
+  - {fileID: 4736047919062086910}
+  EditorParameters:
+  - {fileID: 7173784529438077304}
+  MasterBanks:
+  - {fileID: 6816929582204008035}
+  StringsBanks:
+  - {fileID: -7831356679856588123}
+  stringsBankWriteTime: 637375342914240748
+  cacheVersion: 3
+--- !u!114 &105500710922333403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Soundesign/UI_UX/lancement_jeu
+  m_EditorClassIdentifier: 
+  Path: event:/Soundesign/UI_UX/lancement_jeu
+  guid: 5ce411ad85f40a488a9d5ef443625bac
+  Banks:
+  - {fileID: 6816929582204008035}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 6000
+--- !u!114 &730599247228958592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Soundesign/Piege/Laser_Loop
+  m_EditorClassIdentifier: 
+  Path: event:/Soundesign/Piege/Laser_Loop
+  guid: 016e386fbd99de4191c60ccddb4a9d3f
+  Banks:
+  - {fileID: 6816929582204008035}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 4.4
+  Length: 14000
+--- !u!114 &1778604534649371363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Soundesign/UI_GD/BD_Droite
+  m_EditorClassIdentifier: 
+  Path: event:/Soundesign/UI_GD/BD_Droite
+  guid: 1cc55abdc56e544da09049f575b0d463
+  Banks:
+  - {fileID: 6816929582204008035}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 3989
+--- !u!114 &2440950848859700466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/Soundesign/UI_UX/Bouton_Valid\xE9"
+  m_EditorClassIdentifier: 
+  Path: "event:/Soundesign/UI_UX/Bouton_Valid\xE9"
+  guid: 5f7cdd1321c7044baeca4a9515a7a7f2
+  Banks:
+  - {fileID: 6816929582204008035}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 3989
+--- !u!114 &4042291707066843011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Soundesign/Robot/Deplacement_Tete
+  m_EditorClassIdentifier: 
+  Path: event:/Soundesign/Robot/Deplacement_Tete
+  guid: 8172798b9be6074e8a672bd49ac10c70
+  Banks:
+  - {fileID: 6816929582204008035}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3500
+--- !u!114 &4736047919062086910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Soundesign/UI_GD/BA_Move
+  m_EditorClassIdentifier: 
+  Path: event:/Soundesign/UI_GD/BA_Move
+  guid: fac4687032387b428bc825e3aae9fdbf
+  Banks:
+  - {fileID: 6816929582204008035}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 3989
+--- !u!114 &5140250926397367260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Voice/VOIX_SCIENTIFIQUE
+  m_EditorClassIdentifier: 
+  Path: event:/Voice/VOIX_SCIENTIFIQUE
+  guid: 4adffc68775ae64c9672a49adcf9c772
+  Banks:
+  - {fileID: 6816929582204008035}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 12000
+--- !u!114 &5292807878195699731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Soundesign/Robot/Deplacement_droite
+  m_EditorClassIdentifier: 
+  Path: event:/Soundesign/Robot/Deplacement_droite
+  guid: 35b8c76af029844b9c1b660e6c6a87c3
+  Banks:
+  - {fileID: 6816929582204008035}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3989
+--- !u!114 &5426483699878893243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Soundesign/UI_GD/BA_Action
+  m_EditorClassIdentifier: 
+  Path: event:/Soundesign/UI_GD/BA_Action
+  guid: 19fae862021ffb4e933050d4c8407da2
+  Banks:
+  - {fileID: 6816929582204008035}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 7000
+--- !u!114 &6048977184338414326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Soundesign/Piege/Laser_coupe
+  m_EditorClassIdentifier: 
+  Path: event:/Soundesign/Piege/Laser_coupe
+  guid: b065856494921940a85979de3fa4f491
+  Banks:
+  - {fileID: 6816929582204008035}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2500
+--- !u!114 &6816929582204008035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: ../FMOD_LD47/FMOD_LD_47/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637375342914190854
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
+--- !u!114 &7138123403377128536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Soundesign/Piege/desactivation_laser
+  m_EditorClassIdentifier: 
+  Path: event:/Soundesign/Piege/desactivation_laser
+  guid: bb72161f0a9fae498ff62d2cd37e0478
+  Banks:
+  - {fileID: 6816929582204008035}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3989
+--- !u!114 &7173784529438077304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: Pause
+  m_EditorClassIdentifier: 
+  Name: Pause
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
+--- !u!114 &7366760050388838121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/Music_Level
+  m_EditorClassIdentifier: 
+  Path: event:/Music/Music_Level
+  guid: 74a9cbe6bddbd74ab8677df38dcfe639
+  Banks:
+  - {fileID: 6816929582204008035}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -1811639517459471496}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 128000
+--- !u!114 &7611226891428054072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Soundesign/Decor/Ordinateur_Decor
+  m_EditorClassIdentifier: 
+  Path: event:/Soundesign/Decor/Ordinateur_Decor
+  guid: 78aea067509afc4dadc177bf1a707510
+  Banks:
+  - {fileID: 6816929582204008035}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 13500
+--- !u!114 &8869741069713922369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Soundesign/Piege/Explosion_Tourelle
+  m_EditorClassIdentifier: 
+  Path: event:/Soundesign/Piege/Explosion_Tourelle
+  guid: 6e626ee0054c6143b11fd518088b76c4
+  Banks:
+  - {fileID: 6816929582204008035}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 8473
+--- !u!114 &9198853776402708032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Soundesign/Robot/Mort+Respawn
+  m_EditorClassIdentifier: 
+  Path: event:/Soundesign/Robot/Mort+Respawn
+  guid: 25cf6603f4b6574788ab810f55be0f80
+  Banks:
+  - {fileID: 6816929582204008035}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 6000
