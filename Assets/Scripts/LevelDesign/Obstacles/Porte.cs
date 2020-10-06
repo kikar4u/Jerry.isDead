@@ -35,6 +35,10 @@ public class Porte : Obstacle
                 GameManager.Instance.GameOver();
             }
         }
+        else
+        {
+           // Destroy(this); J'ai mis un destroy, parce que je suppose qu'IsOpen est la condition qui change suivant le levier
+        }
     }
 
     
