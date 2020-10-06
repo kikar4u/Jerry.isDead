@@ -22,7 +22,6 @@ public class ShootRaycast : MonoBehaviour
     void Start()
     {
        _currentAmmo = m_MaxAmmo;
-        
     }
 
     
