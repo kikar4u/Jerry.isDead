@@ -127,6 +127,7 @@ public class TimelineHandler : MonoBehaviour
             switch(action.m_actionData.actionName)
             {
                 case InventaireHandler.AlgoActionEnum.Activate :
+                    // something to do here 
                 break;
 
                 case InventaireHandler.AlgoActionEnum.Shoot :
