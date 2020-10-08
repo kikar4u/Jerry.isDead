@@ -29,6 +29,7 @@ public class GameManager : Singleton<GameManager>
         isGameActive = true;
         levelChucks = SpaceWheel.Instance.levelToLoad.listSections.Count;
         UIManager.Instance.Init();
+        character.GetComponent<PlayerMov>().Init();
     }
 
     public void GameOver()

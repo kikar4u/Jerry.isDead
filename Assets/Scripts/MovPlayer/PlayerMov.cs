@@ -107,7 +107,7 @@ public class PlayerMov : MonoBehaviour
 
     public void Init()
     {
-        
+        positionPlayer = PositionPlayer.center;
     }
 
 

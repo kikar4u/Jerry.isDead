@@ -52,7 +52,6 @@ public class TimelineHandler : MonoBehaviour
         //se brancher sur l'event de leo
         SpaceWheel.Instance.eventSequenceEnds.AddListener(
             ()=>{
-                Debug.Log("CALLED");
                 MoveTimelineDown();
             }
         );
